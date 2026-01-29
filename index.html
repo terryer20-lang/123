@@ -11,16 +11,17 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     
+    <!-- Tailwind via CDN for simplicity, though PostCSS is preferred in full Vite apps -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'brand-red': '#CC0000',    // Consular Red
-              'brand-blue': '#0066CC',   // Macau Blue
-              'brand-green': '#4CAF50',  // Safety Green
-              'brand-orange': '#FF9800', // Warning Orange
+              'brand-red': '#CC0000',
+              'brand-blue': '#0066CC',
+              'brand-green': '#4CAF50',
+              'brand-orange': '#FF9800',
               'brand-dark': '#1C2636',
             },
             fontFamily: {
@@ -51,35 +52,18 @@
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       html { scroll-behavior: smooth; }
-      
-      /* Touch optimization */
       button, a {
         touch-action: manipulation;
         -webkit-tap-highlight-color: transparent;
       }
     </style>
     
-    <!-- Clicky Analytics Integration -->
     <script>
       var clicky_site_ids = clicky_site_ids || [];
-      // Replace 101389898 with your actual Site ID
       clicky_site_ids.push(101389898); 
     </script>
     <script async src="//static.getclicky.com/js"></script>
     
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@^19.2.4",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-        "react/": "https://esm.sh/react@^19.2.4/",
-        "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-        "recharts": "https://esm.sh/recharts@^3.7.0"
-      }
-    }
-    </script>
-    
-    <!-- Service Worker Registration -->
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -89,8 +73,23 @@
         });
       }
     </script>
-  </head>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
   <body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-red selection:text-white">
     <div id="root"></div>
+    <!-- CRITICAL FIX: Vite entry point -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
