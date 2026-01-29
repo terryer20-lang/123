@@ -482,7 +482,7 @@ export const translations = {
       hero_desc: "作为澳门居民，你的权利受到《中华人民共和国澳门特别行政区基本法》的全面保护。无论在本地生活或海外旅游，了解自身权利是保护自己的第一步。",
       residents_title: "你是哪一类居民？",
       perm_title: "永久性居民",
-      perm_desc: "享有澳门居留权，可自由进出澳门，不被施加逗留条件，不被驱逐出境。",
+      perm_desc: "享有澳门居留权，可自由进出澳門，不被施加逗留条件，不被驱逐出境。",
       non_perm_title: "非永久性居民",
       non_perm_desc: "不享有居留权，但依法领取澳门居民身份证。",
       core_title: "核心基本权利",
@@ -962,6 +962,319 @@ export const translations = {
       fraud_title: "Cuidado com Fraudes de Telecom",
       fraud_alert: "Alerta Oficial",
       fraud_desc: "Embaixadas chinesas NUNCA ligam sobre casos ou pedem transferências. Desligue imediatamente!"
+    }
+  },
+  "pt": {
+    app: {
+      title: "Proteção Consular",
+      copyright: "© 2024 Proteção Consular de Macau",
+      placeholder: "Conteúdo em breve...",
+      construction: "🚧"
+    },
+    menu: {
+      title: "Menu",
+      "star-challenge": "Desafio Estrela Consular",
+      "safety-test": "Índice de Segurança",
+      "going-abroad": "Vou Viajar",
+      "overseas-help": "Ajuda no Exterior",
+      "emergency": "Zona de Emergência",
+      "consular-protection": "Proteção Consular",
+      "resident-rights": "Direitos de Residente",
+      "videos": "Vídeos",
+      "podcasts": "Podcasts",
+      "events": "Calendário",
+      "resources": "Recursos",
+      "contact": "Contacte-nos"
+    },
+    home: {
+      hero: {
+        protection: "Proteção",
+        protection_sub: "Consular",
+        rights: "Direitos",
+        rights_sub: "Residente",
+        alerts: "Eventos",
+        alerts_sub: "Calendário",
+        emergency: "Recursos",
+        emergency_sub: "Zona",
+        scroll: "Deslize para mais"
+      },
+      quick: {
+        help: "Ajuda",
+        prepare: "Preparar",
+        test: "Teste",
+        graphics: "Info"
+      },
+      knowledge: {
+        title: "Conhecimento",
+        read: "Ler",
+        label: "SABER"
+      },
+      notifications: {
+        title: "Notificações",
+        col_date: "Data",
+        col_content: "Conteúdo",
+        col_download: "DL",
+        more: "Ver Mais"
+      }
+    },
+    help: {
+      hero_title: "Ajuda no Exterior",
+      hero_desc: "Seja estudando ou viajando, lembre-se destes caminhos para ajuda e dos seus direitos.",
+      contacts_title: "Linhas de Emergência",
+      contacts_desc: "Em emergências, contacte imediatamente:",
+      c_1: "Centro de Emergência Global MFA",
+      c_1_sub: "Suporte 24/7",
+      c_2: "Comissariado do MNE em Macau",
+      c_3: "Polícia de Macau (CPSP)",
+      c_4: "Gabinete de Crise do Turismo",
+      scenarios_title: "Cenários Comuns",
+      s_passport: "Passaporte Perdido?",
+      s_accident: "Acidente?",
+      s_arrest: "Detido?",
+      steps_passport: {
+        1: { t: "Participar", d: "Contactar a polícia local." },
+        2: { t: "Ajuda Online", d: "Registar na app 'Conta Única'." },
+        3: { t: "Reemitir", d: "Ir à Embaixada Chinesa mais próxima." }
+      },
+      steps_accident: {
+        1: { t: "Médico", d: "Ligar emergência local." },
+        2: { t: "Família", d: "Consulado ajuda a contactar família." },
+        3: { t: "Legal", d: "Lista de advogados (custo próprio)." }
+      },
+      steps_arrest: {
+        1: { t: "Pedir Visita", d: "Direito a ver oficial consular." },
+        2: { t: "Proteção", d: "Garantir tratamento justo." }
+      },
+      powers_title: "Poderes Consulares",
+      can_title: "✅ O que PODEM fazer?",
+      cannot_title: "❌ O que NÃO PODEM fazer?",
+      can_list: [
+        "Emergências: Evacuação em desastres.",
+        "Financeiro: Ajudar a contactar família.",
+        "Desaparecidos: Informar canais de busca."
+      ],
+      cannot_list: [
+        "Disputas: Não intervêm em disputas privadas.",
+        "Pagamentos: Não pagam despesas pessoais.",
+        "Judicial: Não interferem na justiça local.",
+        "Garantias: Não dão garantias pessoais."
+      ],
+      tips_title: "Dicas",
+      t_1_t: "Verdade",
+      t_1_d: "Forneça informações precisas.",
+      t_2_t: "Privacidade",
+      t_2_d: "Proteção de dados garantida.",
+      t_3_t: "Custos",
+      t_3_d: "Custos pessoais são seus."
+    },
+    protection: {
+      hero_title: "Proteção Consular",
+      hero_desc: "A pátria está sempre consigo.",
+      definition_title: "O que é?",
+      definition_desc: "Ações para proteger cidadãos chineses.",
+      who_title: "Quem é Elegível?",
+      who_1_title: "Compatriotas de Macau",
+      who_1_desc: "Cidadãos chineses nascidos em Macau.",
+      who_2_title: "Luso-Descendentes",
+      who_2_desc: "Podem escolher nacionalidade.",
+      scope_title: "O que podem fazer?",
+      scope_subtitle: "Âmbito",
+      tab_can: "✅ PODEM",
+      tab_cannot: "❌ NÃO PODEM",
+      can_list: {
+        1: { t: "Emergência", d: "Apoio em desastres" },
+        2: { t: "Segurança", d: "Exigir tratamento justo" },
+        3: { t: "Visita", d: "Visita consular se detido" },
+        4: { t: "Documentos", d: "Documentos de viagem" },
+        5: { t: "Legal", d: "Lista de advogados" },
+        6: { t: "Família", d: "Contactar parentes" }
+      },
+      cannot_list: {
+        1: { t: "Disputas", d: "Sem intervenção privada" },
+        2: { t: "Reportar", d: "Não reportam crimes por si" },
+        3: { t: "Pagar", d: "Não pagam contas" },
+        4: { t: "Judicial", d: "Sem interferência judicial" },
+        5: { t: "Emprego", d: "Não arranjam emprego" }
+      },
+      checklist_title: "5 Coisas Antes de Partir",
+      checklist_items: {
+        1: "Documentos: Validade 6 meses",
+        2: "Alertas: Verificar avisos",
+        3: "Seguro: Comprar seguro",
+        4: "Itinerário: Partilhar com família",
+        5: "Registo: App China Consular"
+      },
+      fraud_title: "Fraude Telecom",
+      fraud_subtitle: "Atenção!",
+      fraud_1_t: "Falso Consulado",
+      fraud_1_d: "Ignorar pedidos de dinheiro.",
+      fraud_2_t: "Rapto Virtual",
+      fraud_2_d: "Verificar com a polícia."
+    },
+    rights: {
+      hero_title: "Direitos de Residente",
+      hero_desc: "Protegidos pela Lei Básica.",
+      residents_title: "Tipo de Residente?",
+      perm_title: "Permanente",
+      perm_desc: "Direito de residência.",
+      non_perm_title: "Não Permanente",
+      non_perm_desc: "Sem direito de residência.",
+      core_title: "Direitos Básicos",
+      core_subtitle: "Lei Básica",
+      rights_list: {
+        freedom: { t: "Liberdade Pessoal", d: "Proteção contra prisão ilegal." },
+        speech: { t: "Expressão", d: "Liberdade de expressão." },
+        movement: { t: "Movimento", d: "Liberdade de viajar." },
+        faith: { t: "Fé", d: "Liberdade religiosa." },
+        judicial: { t: "Judicial", d: "Acesso à lei." },
+        welfare: { t: "Bem-estar", d: "Direitos sociais." }
+      },
+      overseas_title: "No Exterior",
+      overseas_subtitle: "Cidadão Chinês",
+      citizen_def: "Quem é?",
+      citizen_desc: "Ascendência chinesa nascida em Macau.",
+      consular_right: "Direitos Consulares",
+      consular_desc: "Proteção do governo chinês.",
+      nationality_select: "Nacionalidade",
+      nationality_desc: "Escolha voluntária.",
+      passport_convenience: "Viagem",
+      passport_desc: "Passaporte da RAEM.",
+      duty_title: "Deveres",
+      duty_subtitle: "Responsabilidades",
+      duty_1: "Cumprir Leis",
+      duty_1_desc: "Obedecer às leis.",
+      duty_2: "Respeito",
+      duty_2_desc: "Respeitar os outros.",
+      tips_title: "Dicas",
+      tips_passport: "Passaporte",
+      tips_passport_desc: "Prova de identidade.",
+      tips_app: "Contacto",
+      tips_app_desc: "Registe-se na App."
+    },
+    emergency: {
+      page_title: "Zona de Emergência",
+      page_subtitle: "Estratégia para Perigo",
+      call_action: "LIGAR",
+      copy_action: "COPIAR",
+      location_btn: "📍 Localização",
+      locating: "Localizando...",
+      location_found: "Encontrado",
+      location_error: "Erro",
+      main_hotline_label: "Linha Global",
+      main_hotline_desc: "Suporte 24/7",
+      local_hotlines_title: "Linhas de Macau",
+      hotline_commissioner: "Comissariado MFA",
+      hotline_psp: "CPSP (Exterior)",
+      hotline_tourism: "Gabinete Turismo",
+      safety_kit_title: "Kit Segurança",
+      kit_app_title: "App China Consular",
+      kit_app_desc: "Registo",
+      kit_macau_title: "Conta Única",
+      kit_macau_desc: "Serviços",
+      lost_passport_title: "Passaporte Perdido",
+      step_1_t: "Polícia",
+      step_1_d: "Relatório",
+      step_2_t: "Online",
+      step_2_d: "Conta Única",
+      step_3_t: "Embaixada",
+      step_3_d: "Documento",
+      step_4_t: "Visto",
+      step_4_d: "Verificar"
+    },
+    multimedia: {
+      videos_title: "Vídeos",
+      swipe_hint: "Deslize",
+      video_title_template: "Guia de Segurança - Ep {{i}}",
+      podcasts_title: "Podcasts",
+      rss_btn: "RSS",
+      podcast_title_template: "Casos Reais #{{i}}"
+    },
+    challenge: {
+      my_score: "Pontos",
+      weekly_challenge: "Desafio Semanal",
+      question_progress: "Q {{current}} / {{total}}",
+      complete_title: "Completo!",
+      points_earned: "Ganhou",
+      play_again: "Jogar Novamente",
+      leaderboard_title: "Leaderboard",
+      score_suffix: "pts"
+    },
+    safety: {
+      intro: "Verifique os itens. O sistema avaliará.",
+      generate_btn: "Gerar Relatório",
+      result_title: "Índice de Segurança",
+      subjects: {
+        health: "Saúde",
+        crime: "Crime",
+        political: "Política",
+        contact: "Contacto",
+        docs: "Docs"
+      },
+      suggestions: {
+        passport: "⚠️ Faça cópias do passaporte.",
+        insurance: "⚠️ Compre seguro de viagem.",
+        success: "🎉 Tudo pronto!",
+        title: "Sugestões:"
+      },
+      retake_btn: "Refazer"
+    },
+    data: {
+      notifications: {
+        "1": "Alerta de Viagem: Sudeste Asiático",
+        "2": "Seminário Passaporte",
+        "3": "Recrutamento Estrela",
+        "4": "Dicas de Natal"
+      },
+      knowledge: {
+        "1": "Passaporte Perdido",
+        "2": "Contactos",
+        "3": "Proteção"
+      },
+      quiz: {
+        "1": {
+          q: "Passaporte perdido, o que fazer?",
+          o: ["Voltar", "Polícia e Consulado", "Social Media", "Amigos"]
+        },
+        "2": {
+          q: "Número de Emergência Global?",
+          o: ["12345", "110", "12308", "911"]
+        }
+      },
+      safety_questions: {
+        "1": "Seguro comprado?",
+        "2": "Conhece segurança local?",
+        "3": "Registado no MFA?",
+        "4": "Cópias de passaporte?",
+        "5": "Contactos de emergência?"
+      }
+    },
+    prepare: {
+      hero_title: "Partida Segura!",
+      hero_desc: "Preparação é chave.",
+      progress_title: "Progresso",
+      check_title: "Lista de Verificação",
+      check_1_t: "Documentos",
+      check_1_d: "Validade passaporte.",
+      check_2_t: "Visto",
+      check_2_d: "Requisitos de entrada.",
+      check_3_t: "Seguro",
+      check_3_d: "Médico e acidentes.",
+      check_4_t: "Alertas",
+      check_4_d: "Verificar avisos.",
+      check_5_t: "Contacto",
+      check_5_d: "Partilhar itinerário.",
+      alerts_title: "Níveis de Alerta",
+      alert_1: "Atenção",
+      alert_2: "Cautela",
+      alert_3: "Não Ir",
+      luggage_title: "Bagagem",
+      luggage_ok: "✅ Medicamentos",
+      luggage_ok_desc: "Com receita.",
+      luggage_no: "🚫 Proibido",
+      luggage_no_desc: "Sem drogas.",
+      fraud_title: "Fraude",
+      fraud_alert: "Alerta",
+      fraud_desc: "Consulados não pedem dinheiro."
     }
   }
 };
