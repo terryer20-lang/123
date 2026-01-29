@@ -45,7 +45,7 @@ export const translations = {
       knowledge: {
         title: "領保燙知識",
         read: "閱讀",
-        label: "KNOWLEDGE"
+        label: "知識"
       },
       notifications: {
         title: "通知面板",
@@ -54,6 +54,51 @@ export const translations = {
         col_download: "下載",
         more: "查看更多通知"
       }
+    },
+    protection: {
+      hero_title: "海外安全的最強後盾",
+      hero_desc: "無論是留學、畢業旅行還是探親，當你遇到緊急情況時，祖國始終在你身後。",
+      definition_title: "什麼是領事保護？",
+      definition_desc: "當中國公民在海外正當權益受侵害或需幫助時，中國駐外使領館依法維護其權益的行為。",
+      who_title: "誰能獲得幫助？",
+      who_1_title: "澳門同胞",
+      who_1_desc: "具有中國血統且出生在中國領土（含澳門）者，不論是否持有葡萄牙旅行證件，均為中國公民。",
+      who_2_title: "中葡血統居民",
+      who_2_desc: "可根據意願選擇國籍，選擇後享有相應權利。",
+      scope_title: "領事官員能為你做什麼？",
+      scope_subtitle: "職責範圍內的協助清單",
+      tab_can: "✅ 可以做",
+      tab_cannot: "❌ 不可以做",
+      can_list: {
+        1: { t: "緊急應變", d: "遇戰爭、災害時協助撤離或救助" },
+        2: { t: "人身安全", d: "敦促當地警方公正處理案件" },
+        3: { t: "探視權利", d: "被捕或拘留時進行領事探視" },
+        4: { t: "文件補發", d: "遺失證件時協助簽發應急證件" },
+        5: { t: "醫療法律", d: "提供當地醫生、律師翻譯名單" },
+        6: { t: "聯繫家人", d: "協助聯絡在澳親屬" }
+      },
+      cannot_list: {
+        1: { t: "經濟糾紛", d: "不可介入私人財務、勞務或合約糾紛" },
+        2: { t: "代為報案", d: "不可代你報案或參與案件調查" },
+        3: { t: "支付費用", d: "不可代付食宿、交通、醫療或訴訟費" },
+        4: { t: "司法干預", d: "不可干預當地司法或為違法行為買單" },
+        5: { t: "工作擔保", d: "不可為你找工作、申辦居留或擔保" }
+      },
+      checklist_title: "出發前必做 5 件事",
+      checklist_items: {
+        1: "檢查證件：確保護照有效期在 6 個月以上",
+        2: "關注提醒：查詢「中國領事服務網」，留意安全預警",
+        3: "備好保險：根據目的地風險購買合適保險",
+        4: "留下日程：將行程發給家人，約定聯絡方式",
+        5: "登記資訊：透過「中國領事」APP 登記個人資訊"
+      },
+      fraud_title: "警惕電信詐騙",
+      fraud_subtitle: "留學生必看！",
+      fraud_1_t: "假冒使領館",
+      fraud_1_d: "聲稱涉刑事案或包裹被扣，要求轉賬至「安全賬戶」。使領館絕不會電話要求轉賬！",
+      fraud_2_t: "虛擬綁架",
+      fraud_2_d: "誘導切斷聯絡，再向家長索贖金。遇到此類情況應立即向警方核實。",
+      footer_hotline: "外交部全球領保熱線"
     },
     emergency: {
       title: "外交部全球領事保護與服務\n應急熱線 (24小時)",
@@ -173,7 +218,7 @@ export const translations = {
       knowledge: {
         title: "领保烫知识",
         read: "阅读",
-        label: "KNOWLEDGE"
+        label: "知识"
       },
       notifications: {
         title: "通知面板",
@@ -182,6 +227,51 @@ export const translations = {
         col_download: "下载",
         more: "查看更多通知"
       }
+    },
+    protection: {
+      hero_title: "海外安全的最强后盾",
+      hero_desc: "无论是留学、毕业旅行还是探亲，当你遇到紧急情况时，祖国始终在你身后。",
+      definition_title: "什么是领事保护？",
+      definition_desc: "当中国公民在海外正当权益受侵害或需帮助时，中国驻外使领馆依法维护其权益的行为。",
+      who_title: "谁能获得帮助？",
+      who_1_title: "澳门同胞",
+      who_1_desc: "具有中国血统且出生在中国领土（含澳门）者，不论是否持有葡萄牙旅行证件，均为中国公民。",
+      who_2_title: "中葡血统居民",
+      who_2_desc: "可根据意愿选择国籍，选择后享有相应权利。",
+      scope_title: "领事官员能为你做什么？",
+      scope_subtitle: "职责范围内的协助清单",
+      tab_can: "✅ 可以做",
+      tab_cannot: "❌ 不可以做",
+      can_list: {
+        1: { t: "紧急应变", d: "遇战争、灾害时协助撤离或救助" },
+        2: { t: "人身安全", d: "敦促当地警方公正处理案件" },
+        3: { t: "探视权利", d: "被捕或拘留时进行领事探视" },
+        4: { t: "文件补发", d: "遗失证件时协助签发应急证件" },
+        5: { t: "医疗法律", d: "提供当地医生、律师翻译名单" },
+        6: { t: "联系家人", d: "协助联络在澳亲属" }
+      },
+      cannot_list: {
+        1: { t: "经济纠纷", d: "不可介入私人财务、劳务或合约纠纷" },
+        2: { t: "代为报案", d: "不可代你报案或参与案件调查" },
+        3: { t: "支付费用", d: "不可代付食宿、交通、医疗或诉讼费" },
+        4: { t: "司法干预", d: "不可干预当地司法或为违法行为买单" },
+        5: { t: "工作担保", d: "不可为你找工作、申办居留或担保" }
+      },
+      checklist_title: "出发前必做 5 件事",
+      checklist_items: {
+        1: "检查证件：确保护照有效期在 6 个月以上",
+        2: "关注提醒：查询「中国领事服务网」，留意安全预警",
+        3: "备好保险：根据目的地风险购买合适保险",
+        4: "留下日程：将行程发给家人，约定联络方式",
+        5: "登记资讯：透过「中国领事」APP 登记个人资讯"
+      },
+      fraud_title: "警惕电信诈骗",
+      fraud_subtitle: "留学生必看！",
+      fraud_1_t: "假冒使领馆",
+      fraud_1_d: "声称涉刑事案或包裹被扣，要求转账至「安全账户」。使领馆绝不会电话要求转账！",
+      fraud_2_t: "虚拟绑架",
+      fraud_2_d: "诱导切断联络，再向家长索赎金。遇到此类情况应立即向警方核实。",
+      footer_hotline: "外交部全球领保热线"
     },
     emergency: {
       title: "外交部全球领事保护与服务\n应急热线 (24小时)",
@@ -301,7 +391,7 @@ export const translations = {
       knowledge: {
         title: "Knowledge",
         read: "Read",
-        label: "INFO"
+        label: "KNOWLEDGE"
       },
       notifications: {
         title: "Notifications",
@@ -310,6 +400,51 @@ export const translations = {
         col_download: "DL",
         more: "View More"
       }
+    },
+    protection: {
+      hero_title: "Strongest Backing for Safety",
+      hero_desc: "Whether studying, traveling, or visiting relatives, the motherland is always behind you.",
+      definition_title: "What is Consular Protection?",
+      definition_desc: "Actions by embassies to protect rights of Chinese citizens abroad.",
+      who_title: "Who is Eligible?",
+      who_1_title: "Macao Compatriots",
+      who_1_desc: "Chinese descent born in Chinese territory (inc. Macao) are Chinese citizens.",
+      who_2_title: "Sino-Portuguese",
+      who_2_desc: "Can choose nationality according to preference.",
+      scope_title: "What Can They Do?",
+      scope_subtitle: "Scope of Assistance",
+      tab_can: "✅ CAN DO",
+      tab_cannot: "❌ CANNOT DO",
+      can_list: {
+        1: { t: "Emergency", d: "Evacuation or relief in war/disaster" },
+        2: { t: "Safety", d: "Urge police to handle cases fairly" },
+        3: { t: "Visitation", d: "Consular visits if arrested" },
+        4: { t: "Documents", d: "Issue emergency travel documents" },
+        5: { t: "Legal/Medical", d: "Provide lists of local doctors/lawyers" },
+        6: { t: "Family", d: "Help contact relatives in Macao" }
+      },
+      cannot_list: {
+        1: { t: "Private Disputes", d: "Cannot intervene in financial/contract disputes" },
+        2: { t: "Report Crimes", d: "Cannot report crimes on your behalf" },
+        3: { t: "Pay Bills", d: "Cannot pay for food, transport, or legal fees" },
+        4: { t: "Judicial", d: "Cannot interfere in local judicial processes" },
+        5: { t: "Jobs", d: "Cannot find jobs or provide guarantees" }
+      },
+      checklist_title: "5 Must-Dos Before Departure",
+      checklist_items: {
+        1: "Check Docs: Passport valid for 6+ months",
+        2: "Alerts: Check Consular Service Network",
+        3: "Insurance: Buy suitable travel insurance",
+        4: "Itinerary: Share schedule with family",
+        5: "Register: Use 'China Consular' App"
+      },
+      fraud_title: "Beware of Telecom Fraud",
+      fraud_subtitle: "Students Take Note!",
+      fraud_1_t: "Fake Consulate",
+      fraud_1_d: "Claims of criminal involvement? Fake. We never ask for transfers.",
+      fraud_2_t: "Virtual Kidnapping",
+      fraud_2_d: "Luring to cut contact to extort parents. Verify with police immediately.",
+      footer_hotline: "Global Consular Hotline"
     },
     emergency: {
       title: "Global Emergency Call Center\nfor Consular Protection (24H)",
@@ -429,7 +564,7 @@ export const translations = {
       knowledge: {
         title: "Informações",
         read: "Ler",
-        label: "INFO"
+        label: "INFORMAÇÃO"
       },
       notifications: {
         title: "Notificações",
@@ -438,6 +573,51 @@ export const translations = {
         col_download: "DL",
         more: "Ver Mais"
       }
+    },
+    protection: {
+      hero_title: "O Seu Escudo no Estrangeiro",
+      hero_desc: "Em caso de emergência no estrangeiro, a pátria está sempre consigo.",
+      definition_title: "O que é Proteção Consular?",
+      definition_desc: "Ações das embaixadas para proteger os direitos dos cidadãos chineses.",
+      who_title: "Quem é Elegível?",
+      who_1_title: "Compatriotas de Macau",
+      who_1_desc: "Ascendência chinesa nascida em território chinês (inc. Macau) são cidadãos chineses.",
+      who_2_title: "Luso-Chineses",
+      who_2_desc: "Podem escolher a nacionalidade de acordo com a preferência.",
+      scope_title: "O Que Podem Fazer?",
+      scope_subtitle: "Âmbito de Assistência",
+      tab_can: "✅ PODE",
+      tab_cannot: "❌ NÃO PODE",
+      can_list: {
+        1: { t: "Emergência", d: "Evacuação ou socorro em guerra/desastre" },
+        2: { t: "Segurança", d: "Instar a polícia a tratar casos com justiça" },
+        3: { t: "Visitação", d: "Visitas consulares em caso de prisão" },
+        4: { t: "Documentos", d: "Emitir documentos de viagem de emergência" },
+        5: { t: "Legal/Médico", d: "Fornecer listas de médicos/advogados" },
+        6: { t: "Família", d: "Ajudar a contactar parentes em Macau" }
+      },
+      cannot_list: {
+        1: { t: "Disputas Privadas", d: "Não intervém em disputas financeiras" },
+        2: { t: "Reportar Crimes", d: "Não pode reportar crimes por si" },
+        3: { t: "Pagar Contas", d: "Não paga alimentação, transporte ou taxas" },
+        4: { t: "Judicial", d: "Não interfere em processos judiciais" },
+        5: { t: "Empregos", d: "Não encontra empregos nem fornece garantias" }
+      },
+      checklist_title: "5 Coisas a Fazer Antes de Partir",
+      checklist_items: {
+        1: "Verificar Docs: Passaporte válido por 6+ meses",
+        2: "Alertas: Verificar Rede de Serviços Consulares",
+        3: "Seguro: Comprar seguro de viagem adequado",
+        4: "Itinerário: Partilhar agenda com a família",
+        5: "Registo: Usar App 'China Consular'"
+      },
+      fraud_title: "Cuidado com Fraudes",
+      fraud_subtitle: "Estudantes Atenção!",
+      fraud_1_t: "Falso Consulado",
+      fraud_1_d: "Alega envolvimento criminal? Falso. Nunca pedimos transferências.",
+      fraud_2_t: "Sequestro Virtual",
+      fraud_2_d: "Induzir corte de contacto para extorquir pais. Verifique com a polícia.",
+      footer_hotline: "Linha Global Consular"
     },
     emergency: {
       title: "Linha de Emergência Global\nProteção Consular (24H)",

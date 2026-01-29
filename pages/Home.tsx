@@ -14,49 +14,65 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Full Dynamic Viewport Height */}
-      <section className="relative h-[100dvh] w-full flex flex-col md:flex-row overflow-hidden">
+      <section className="relative h-[100dvh] w-full flex flex-col md:flex-row overflow-hidden bg-gray-900">
         
         {/* Column 1: Consular Protection (Red) */}
-        <Link to="/protection" className="group relative flex-1 bg-brand-red flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0">
+        <Link 
+          to="/protection" 
+          className="group relative flex-1 bg-brand-red flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          style={{ animationDelay: '0ms' }}
+        >
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300">🛡️</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide">{t('home.hero.protection')}</h2>
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🛡️</div>
+            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.protection')}</h2>
             <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.protection_sub')}</p>
           </div>
         </Link>
 
         {/* Column 2: Resident Rights (Blue) */}
-        <Link to="/rights" className="group relative flex-1 bg-brand-blue flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0">
+        <Link 
+          to="/rights" 
+          className="group relative flex-1 bg-brand-blue flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          style={{ animationDelay: '100ms' }}
+        >
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300">⚖️</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide">{t('home.hero.rights')}</h2>
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">⚖️</div>
+            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.rights')}</h2>
              <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.rights_sub')}</p>
           </div>
         </Link>
 
         {/* Column 3: Travel Alerts (Orange) */}
-        <Link to="/safety-index" className="group relative flex-1 bg-brand-orange flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0">
+        <Link 
+          to="/safety-index" 
+          className="group relative flex-1 bg-brand-orange flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          style={{ animationDelay: '200ms' }}
+        >
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300">📢</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide">{t('home.hero.alerts')}</h2>
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📢</div>
+            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
              <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.alerts_sub')}</p>
           </div>
         </Link>
 
         {/* Column 4: Emergency (Green - Safety) */}
-        <Link to="/emergency" className="group relative flex-1 bg-brand-green flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0">
+        <Link 
+          to="/emergency" 
+          className="group relative flex-1 bg-brand-green flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          style={{ animationDelay: '300ms' }}
+        >
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300">🚨</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide">{t('home.hero.emergency')}</h2>
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🚨</div>
+            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
              <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.emergency_sub')}</p>
           </div>
         </Link>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-[env(safe-area-inset-bottom)] mb-6 md:mb-8 left-0 right-0 flex justify-center pointer-events-none z-20">
+        {/* Scroll Indicator - Moved Up */}
+        <div className="absolute bottom-[env(safe-area-inset-bottom)] mb-20 md:mb-24 left-0 right-0 flex justify-center pointer-events-none z-20 opacity-0 animate-fade-in" style={{ animationDelay: '1000ms' }}>
           <button 
             onClick={(e) => { e.preventDefault(); scrollToContent(); }}
-            className="pointer-events-auto flex flex-col items-center gap-1 md:gap-2 bg-black/20 backdrop-blur-md px-4 py-2 md:px-6 rounded-full text-white hover:bg-black/40 transition-colors border border-white/20"
+            className="pointer-events-auto flex flex-col items-center gap-1 md:gap-2 bg-black/20 backdrop-blur-md px-4 py-2 md:px-6 rounded-full text-white hover:bg-black/40 transition-colors border border-white/20 shadow-lg"
           >
             <span className="text-[10px] md:text-xs font-medium tracking-widest opacity-90">{t('home.hero.scroll')}</span>
             <svg className="w-3 h-3 md:w-4 md:h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">

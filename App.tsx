@@ -6,6 +6,7 @@ import Challenge from './pages/Challenge';
 import SafetyIndex from './pages/SafetyIndex';
 import Emergency from './pages/Emergency';
 import Multimedia from './pages/Multimedia';
+import Protection from './pages/Protection';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
 // Placeholder components for routes not fully detailed in requirement
@@ -29,10 +30,10 @@ const AppRoutes = () => {
           <Route path="/safety-index" element={<SafetyIndex />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/multimedia" element={<Multimedia />} />
+          <Route path="/protection" element={<Protection />} />
           
           <Route path="/prepare" element={<PlaceholderPage titleKey="menu.going-abroad" />} />
           <Route path="/help" element={<PlaceholderPage titleKey="menu.overseas-help" />} />
-          <Route path="/protection" element={<PlaceholderPage titleKey="menu.consular-protection" />} />
           <Route path="/rights" element={<PlaceholderPage titleKey="menu.resident-rights" />} />
           <Route path="/events" element={<PlaceholderPage titleKey="menu.events" />} />
           <Route path="/resources" element={<PlaceholderPage titleKey="menu.resources" />} />
