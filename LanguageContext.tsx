@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { useContext, useState, type ReactNode } from 'react';
 import { translations, LanguageCode, LANGUAGE_LABELS } from './locales';
 
 // Helper to get nested object values
@@ -13,7 +13,8 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+// Use React.createContext to ensure 'React' import is used
+const LanguageContext = React.createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<LanguageCode>('zh-MO');
