@@ -100,7 +100,7 @@ const Home: React.FC = () => {
                   <div className="text-3xl mb-1">📊</div>
                   <span className="font-bold text-gray-800 text-sm leading-tight">{t('home.quick.test')}</span>
               </Link>
-               <Link to="/resources" className="bg-green-50 hover:bg-green-100 border border-green-100 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-colors active:scale-95 duration-200">
+               <Link to="/graphics" className="bg-green-50 hover:bg-green-100 border border-green-100 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-colors active:scale-95 duration-200">
                   <div className="text-3xl mb-1">🖼️</div>
                   <span className="font-bold text-gray-800 text-sm leading-tight">{t('home.quick.graphics')}</span>
               </Link>
@@ -167,32 +167,32 @@ const Home: React.FC = () => {
                   
                   {/* Title Area */}
                   <div className="md:col-span-7 flex justify-between items-start gap-3">
-                    <a href={item.link} className="text-sm md:text-base text-gray-800 font-medium hover:text-brand-blue leading-snug">
+                    <Link to={item.link} className="text-sm md:text-base text-gray-800 font-medium hover:text-brand-blue leading-snug">
                       {t(`data.notifications.${item.id}`)}
-                    </a>
+                    </Link>
                     
-                    {/* Mobile: Download button next to title if needed, or keeping it separate */}
-                    <a href={item.link} className="md:hidden shrink-0 w-8 h-8 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center -mt-1 active:bg-gray-200">
+                    {/* Mobile: Detail link icon */}
+                    <Link to={item.link} className="md:hidden shrink-0 w-8 h-8 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center -mt-1 active:bg-gray-200">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
 
-                  {/* Desktop: Download Button */}
+                  {/* Desktop: Detail Link Button */}
                   <div className="hidden md:flex md:col-span-2 justify-end">
-                    <a href={item.link} className="w-8 h-8 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors">
+                    <Link to={item.link} className="w-8 h-8 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
             
             <div className="p-4 bg-gray-50 text-center border-t border-gray-200">
-              <Link to="/events" className="text-xs md:text-sm text-gray-500 hover:text-brand-blue font-medium inline-flex items-center gap-1 py-1">
+              <Link to="/past-notifications" className="text-xs md:text-sm text-gray-500 hover:text-brand-blue font-medium inline-flex items-center gap-1 py-1">
                 {t('home.notifications.more')} <span>&darr;</span>
               </Link>
             </div>

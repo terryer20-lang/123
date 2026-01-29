@@ -8,8 +8,9 @@ export const MENU_ITEMS: MenuItem[] = [
   {id: "emergency", icon: "🚨", text: "emergency", path: "/emergency"},
   {id: "consular-protection", icon: "🛡️", text: "protection", path: "/protection"},
   {id: "resident-rights", icon: "📜", text: "rights", path: "/rights"},
-  {id: "videos", icon: "🎥", text: "videos", path: "/multimedia"},
-  {id: "podcasts", icon: "🎙️", text: "podcasts", path: "/multimedia"},
+  {id: "past-notifications", icon: "📨", text: "past-notifications", path: "/past-notifications"},
+  {id: "graphics", icon: "🖼️", text: "graphics", path: "/graphics"},
+  {id: "hot-knowledge", icon: "💡", text: "hot-knowledge", path: "/hot-knowledge"},
   {id: "events", icon: "📅", text: "events", path: "/events"},
   {id: "resources", icon: "📚", text: "resources", path: "/resources"},
   {id: "contact", icon: "📞", text: "contact", path: "/contact"}
@@ -21,10 +22,10 @@ export const EXTERNAL_LINKS = {
 };
 
 export const MOCK_NOTIFICATIONS: NotificationItem[] = [
-  { id: '1', date: '2026-03-15', link: '#' },
-  { id: '2', date: '2026-02-28', link: '#' },
-  { id: '3', date: '2026-01-10', link: '#' },
-  { id: '4', date: '2025-12-24', link: '#' },
+  { id: '1', date: '2026-03-15', link: '/notification/1' },
+  { id: '2', date: '2026-02-28', link: '/notification/2' },
+  { id: '3', date: '2026-01-10', link: '/notification/3' },
+  { id: '4', date: '2025-12-24', link: '/notification/4' },
 ];
 
 export const KNOWLEDGE_CARDS: KnowledgeCard[] = [

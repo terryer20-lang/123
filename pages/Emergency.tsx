@@ -35,7 +35,7 @@ const Emergency: React.FC = () => {
           
           // Redirect to Google Maps searching for nearest Chinese Consulate
           setTimeout(() => {
-             window.open(`https://www.google.com/maps/search/Chinese+Consulate/@${latitude},${longitude},13z`, '_blank');
+             window.location.href = `https://www.google.com/maps/search/Chinese+Consulate/@${latitude},${longitude},12z`;
           }, 1500);
         },
         (error) => {

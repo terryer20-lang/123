@@ -13,7 +13,8 @@ export const translations = {
       title: "領事保護",
       copyright: "© 2024 澳門領事保護",
       placeholder: "內容建設中...",
-      construction: "🚧"
+      construction: "🚧",
+      back: "返回"
     },
     menu: {
       title: "功能菜單",
@@ -24,8 +25,9 @@ export const translations = {
       "emergency": "緊急求助專區",
       "consular-protection": "領事保護與協助",
       "resident-rights": "居民身份權利",
-      "videos": "一分鐘短片集",
-      "podcasts": "播客集",
+      "past-notifications": "往期推送",
+      "graphics": "圖文包",
+      "hot-knowledge": "領保燙知識",
       "events": "活動日程",
       "resources": "資源專區",
       "contact": "聯絡我們"
@@ -54,10 +56,10 @@ export const translations = {
         label: "知識"
       },
       notifications: {
-        title: "通知面板",
+        title: "通知",
         col_date: "日期",
-        col_content: "內容",
-        col_download: "下載",
+        col_content: "標題",
+        col_download: "詳情",
         more: "查看更多通知"
       }
     },
@@ -233,14 +235,6 @@ export const translations = {
       step_4_t: "後續處理",
       step_4_d: "諮詢第三國簽證事宜"
     },
-    multimedia: {
-      videos_title: "一分鐘短片集",
-      swipe_hint: "滑動查看",
-      video_title_template: "海外出行安全指南 - 第{{i}}集：證件保管的重要性",
-      podcasts_title: "領保播客",
-      rss_btn: "RSS 訂閱",
-      podcast_title_template: "領事保護真實案例解析 #{{i}}"
-    },
     challenge: {
       my_score: "我的積分",
       weekly_challenge: "每週挑戰",
@@ -334,7 +328,8 @@ export const translations = {
       title: "领事保护",
       copyright: "© 2024 澳门领事保护",
       placeholder: "内容建设中...",
-      construction: "🚧"
+      construction: "🚧",
+      back: "返回"
     },
     menu: {
       title: "功能菜单",
@@ -345,8 +340,9 @@ export const translations = {
       "emergency": "紧急求助专区",
       "consular-protection": "领事保护与协助",
       "resident-rights": "居民身份权利",
-      "videos": "一分钟短片集",
-      "podcasts": "播客集",
+      "past-notifications": "往期推送",
+      "graphics": "图文包",
+      "hot-knowledge": "领保烫知识",
       "events": "活动日程",
       "resources": "资源专区",
       "contact": "联络我们"
@@ -375,10 +371,10 @@ export const translations = {
         label: "知识"
       },
       notifications: {
-        title: "通知面板",
+        title: "通知",
         col_date: "日期",
-        col_content: "内容",
-        col_download: "下载",
+        col_content: "标题",
+        col_download: "详情",
         more: "查看更多通知"
       }
     },
@@ -554,14 +550,6 @@ export const translations = {
       step_4_t: "后续处理",
       step_4_d: "咨询第三国签证事宜"
     },
-    multimedia: {
-      videos_title: "一分钟短片集",
-      swipe_hint: "滑动查看",
-      video_title_template: "海外出行安全指南 - 第{{i}}集：证件保管的重要性",
-      podcasts_title: "领保播客",
-      rss_btn: "RSS 订阅",
-      podcast_title_template: "领事保护真实案例解析 #{{i}}"
-    },
     challenge: {
       my_score: "我的积分",
       weekly_challenge: "每周挑战",
@@ -655,7 +643,8 @@ export const translations = {
       title: "Consular Prot.",
       copyright: "© 2024 Macao Consular Protection",
       placeholder: "Content Coming Soon...",
-      construction: "🚧"
+      construction: "🚧",
+      back: "Back"
     },
     menu: {
       title: "Menu",
@@ -666,8 +655,9 @@ export const translations = {
       "emergency": "Emergency Zone",
       "consular-protection": "Consular Protection",
       "resident-rights": "Resident Rights",
-      "videos": "1-Min Videos",
-      "podcasts": "Podcasts",
+      "past-notifications": "Past Notifications",
+      "graphics": "Infographics",
+      "hot-knowledge": "Consular Knowledge",
       "events": "Events Calendar",
       "resources": "Resources",
       "contact": "Contact Us"
@@ -698,8 +688,8 @@ export const translations = {
       notifications: {
         title: "Notifications",
         col_date: "Date",
-        col_content: "Content",
-        col_download: "DL",
+        col_content: "Title",
+        col_download: "Link",
         more: "View More"
       }
     },
@@ -868,14 +858,6 @@ export const translations = {
       step_4_t: "Follow-up",
       step_4_d: "Check visa status"
     },
-    multimedia: {
-      videos_title: "1-Min Video Series",
-      swipe_hint: "Swipe for more",
-      video_title_template: "Travel Safety Guide - Ep {{i}}: Importance of Document Safety",
-      podcasts_title: "Consular Podcasts",
-      rss_btn: "RSS Subscribe",
-      podcast_title_template: "Real Consular Protection Cases #{{i}}"
-    },
     challenge: {
       my_score: "My Score",
       weekly_challenge: "Weekly Challenge",
@@ -958,7 +940,7 @@ export const translations = {
       luggage_ok: "✅ Medicamentos",
       luggage_ok_desc: "Traga receita médica ou mantenha a embalagem original.",
       luggage_no: "🚫 Proibido",
-      luggage_no_desc: "Nunca leve bagagem de estranhos. Sem drogas ou produtos protegidos.",
+      luggage_no_desc: "Sem drogas.",
       fraud_title: "Cuidado com Fraudes de Telecom",
       fraud_alert: "Alerta Oficial",
       fraud_desc: "Embaixadas chinesas NUNCA ligam sobre casos ou pedem transferências. Desligue imediatamente!"
@@ -969,7 +951,8 @@ export const translations = {
       title: "Proteção Consular",
       copyright: "© 2024 Proteção Consular de Macau",
       placeholder: "Conteúdo em breve...",
-      construction: "🚧"
+      construction: "🚧",
+      back: "Voltar"
     },
     menu: {
       title: "Menu",
@@ -980,8 +963,9 @@ export const translations = {
       "emergency": "Zona de Emergência",
       "consular-protection": "Proteção Consular",
       "resident-rights": "Direitos de Residente",
-      "videos": "Vídeos",
-      "podcasts": "Podcasts",
+      "past-notifications": "Notificações Anteriores",
+      "graphics": "Infográficos",
+      "hot-knowledge": "Dicas Consulares",
       "events": "Calendário",
       "resources": "Recursos",
       "contact": "Contacte-nos"
@@ -1012,8 +996,8 @@ export const translations = {
       notifications: {
         title: "Notificações",
         col_date: "Data",
-        col_content: "Conteúdo",
-        col_download: "DL",
+        col_content: "Título",
+        col_download: "Link",
         more: "Ver Mais"
       }
     },
@@ -1180,14 +1164,6 @@ export const translations = {
       step_3_d: "Documento",
       step_4_t: "Visto",
       step_4_d: "Verificar"
-    },
-    multimedia: {
-      videos_title: "Vídeos",
-      swipe_hint: "Deslize",
-      video_title_template: "Guia de Segurança - Ep {{i}}",
-      podcasts_title: "Podcasts",
-      rss_btn: "RSS",
-      podcast_title_template: "Casos Reais #{{i}}"
     },
     challenge: {
       my_score: "Pontos",

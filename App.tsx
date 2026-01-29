@@ -5,11 +5,11 @@ import Home from './pages/Home';
 import Challenge from './pages/Challenge';
 import SafetyIndex from './pages/SafetyIndex';
 import Emergency from './pages/Emergency';
-import Multimedia from './pages/Multimedia';
 import Protection from './pages/Protection';
 import Rights from './pages/Rights';
 import Help from './pages/Help';
 import Prepare from './pages/Prepare';
+import NotificationDetail from './pages/NotificationDetail';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
 // Placeholder components for routes not fully detailed in requirement
@@ -44,11 +44,16 @@ const AppRoutes = () => {
           <Route path="/challenge" element={<Challenge />} />
           <Route path="/safety-index" element={<SafetyIndex />} />
           <Route path="/emergency" element={<Emergency />} />
-          <Route path="/multimedia" element={<Multimedia />} />
           <Route path="/protection" element={<Protection />} />
           <Route path="/rights" element={<Rights />} />
           <Route path="/help" element={<Help />} />
           <Route path="/prepare" element={<Prepare />} />
+          
+          <Route path="/notification/:id" element={<NotificationDetail />} />
+          
+          <Route path="/past-notifications" element={<PlaceholderPage titleKey="menu.past-notifications" />} />
+          <Route path="/graphics" element={<PlaceholderPage titleKey="menu.graphics" />} />
+          <Route path="/hot-knowledge" element={<PlaceholderPage titleKey="menu.hot-knowledge" />} />
           
           <Route path="/events" element={<PlaceholderPage titleKey="menu.events" />} />
           <Route path="/resources" element={<PlaceholderPage titleKey="menu.resources" />} />
