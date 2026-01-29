@@ -1,11 +1,14 @@
-<div align="center">
+# Macau Consular Protection Web App
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## Deployment
+1. Install dependencies: `npm install` (if building locally)
+2. Deploy to Vercel:
+   - Import project in Vercel Dashboard
+   - Vercel will automatically detect `vercel.json`
+   - No build command needed for this static/SPA structure.
 
-  <h1>Built with AI Studio</h2>
-
-  <p>The fastest path from prompt to production with Gemini.</p>
-
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+## Features
+- PWA Support (Manifest + Service Worker)
+- 4 Language Support Structure
+- Clicky Analytics Integrated
+- Performance Optimized (WebP, Caching)

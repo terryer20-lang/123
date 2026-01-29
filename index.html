@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-MO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#CC0000">
+    <meta name="description" content="Macau Consular Protection - Emergency assistance and travel safety">
+    <link rel="manifest" href="/manifest.json">
+    <title>澳门领事保护宣传</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-red': '#CC0000',    // Consular Red
+              'brand-blue': '#0066CC',   // Macau Blue
+              'brand-green': '#4CAF50',  // Safety Green
+              'brand-orange': '#FF9800', // Warning Orange
+              'brand-dark': '#1C2636',
+            },
+            fontFamily: {
+              sans: ['PingFang SC', 'Noto Sans SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
+              serif: ['PingFang TC', 'Noto Sans TC', 'serif'],
+              en: ['Roboto', '-apple-system', 'sans-serif'],
+              pt: ['Open Sans', 'Arial', 'sans-serif'],
+            },
+            animation: {
+              'slide-in': 'slideIn 0.3s ease-out forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+            },
+            keyframes: {
+              slideIn: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      html { scroll-behavior: smooth; }
+      
+      /* Touch optimization */
+      button, a {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+    
+    <!-- Clicky Analytics Integration -->
+    <script>
+      var clicky_site_ids = clicky_site_ids || [];
+      // Replace 101389898 with your actual Site ID
+      clicky_site_ids.push(101389898); 
+    </script>
+    <script async src="//static.getclicky.com/js"></script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+        "recharts": "https://esm.sh/recharts@^3.7.0"
+      }
+    }
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('SW registered'))
+            .catch(err => console.log('SW registration failed', err));
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-red selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
