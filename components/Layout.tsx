@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { MENU_ITEMS } from '../constants';
+import { useLanguage, LANGUAGE_LABELS } from '../LanguageContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, cycleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,26 +38,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
              <span className="font-serif font-bold text-white text-base md:text-lg">EQ</span>
           </div>
           <span className={`font-bold text-white text-base md:text-lg tracking-wide whitespace-nowrap ${isHome && !scrolled ? 'text-shadow-sm' : ''}`}>
-            领事保护
+            {t('app.title')}
           </span>
         </Link>
         
         {/* Right Actions */}
         <div className="flex items-center gap-2 md:gap-3 z-50 relative">
-          {/* Language Switcher - Responsive */}
-          <div className="hidden md:flex bg-black/20 backdrop-blur rounded-full px-4 py-1.5 text-xs font-medium text-white border border-white/20 items-center gap-3">
-             <button className="hover:text-brand-orange transition-colors">繁</button>
-             <span className="opacity-50">|</span>
-             <button className="hover:text-brand-orange transition-colors">简</button>
-             <span className="opacity-50">|</span>
-             <button className="hover:text-brand-orange transition-colors font-en">EN</button>
-             <span className="opacity-50">|</span>
-             <button className="hover:text-brand-orange transition-colors font-pt">PT</button>
-          </div>
-           {/* Mobile simpler lang switcher */}
-           <button className="md:hidden w-8 h-8 rounded-full bg-white/20 backdrop-blur text-white border border-white/30 flex items-center justify-center text-xs font-bold active:bg-white/30">
-             繁
-           </button>
+          
+          {/* Circular Language Button (Single Toggle) */}
+          <button 
+            onClick={cycleLanguage}
+            className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur border border-white/30 flex items-center justify-center text-white font-bold hover:bg-white/20 transition-colors active:scale-95 touch-manipulation text-xs md:text-sm"
+            aria-label="Switch Language"
+          >
+             {LANGUAGE_LABELS[language]}
+          </button>
 
           {/* Menu Button */}
           <button 
@@ -85,7 +82,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           onClick={e => e.stopPropagation()}
         >
           <div className="p-5 md:p-6 flex justify-between items-center bg-brand-red text-white pt-safe-top">
-            <span className="font-bold text-lg md:text-xl tracking-wider">功能菜单</span>
+            <span className="font-bold text-lg md:text-xl tracking-wider">{t('menu.title')}</span>
             <button onClick={() => setIsMenuOpen(false)} className="text-2xl opacity-70 hover:opacity-100 w-8 h-8 flex items-center justify-center active:scale-90">&times;</button>
           </div>
           <div className="overflow-y-auto flex-1 py-2 overscroll-contain">
@@ -98,13 +95,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               >
                 <span className="mr-4 text-lg md:text-xl w-6 text-center group-hover:scale-110 transition-transform duration-200">{item.icon}</span>
                 <span className={`text-sm md:text-base font-medium ${location.pathname === item.path ? 'text-brand-red' : 'text-gray-700'}`}>
-                  {item.text}
+                  {t(`menu.${item.id}`)}
                 </span>
               </Link>
             ))}
           </div>
           <div className="p-4 md:p-6 bg-gray-50 text-center text-xs text-gray-400 pb-safe-bottom">
-            © 2024 澳门领事保护
+            {t('app.copyright')}
           </div>
         </div>
       </div>

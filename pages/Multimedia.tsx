@@ -1,13 +1,16 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext';
 
 const Multimedia: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="pb-24 pt-16 md:pt-20">
       {/* Video Section */}
       <div className="mb-8">
         <div className="px-5 py-3 bg-gray-50/95 backdrop-blur sticky top-[60px] md:top-[72px] z-30 font-bold text-gray-800 border-l-4 border-brand-blue flex justify-between items-center shadow-sm">
-          <span>一分钟短片集</span>
-          <span className="text-xs text-brand-blue font-normal">滑动查看 &rarr;</span>
+          <span>{t('multimedia.videos_title')}</span>
+          <span className="text-xs text-brand-blue font-normal">{t('multimedia.swipe_hint')} &rarr;</span>
         </div>
         <div className="overflow-x-auto flex gap-4 p-5 no-scrollbar touch-pan-x">
           {[1, 2, 3].map((i) => (
@@ -21,7 +24,9 @@ const Multimedia: React.FC = () => {
                 </div>
                 <span className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">01:30</span>
               </div>
-              <h4 className="font-medium text-gray-800 text-sm md:text-base line-clamp-2 leading-snug">海外出行安全指南 - 第{i}集：证件保管的重要性</h4>
+              <h4 className="font-medium text-gray-800 text-sm md:text-base line-clamp-2 leading-snug">
+                {t('multimedia.video_title_template').replace('{{i}}', i.toString())}
+              </h4>
             </div>
           ))}
         </div>
@@ -30,8 +35,8 @@ const Multimedia: React.FC = () => {
       {/* Podcast Section */}
       <div>
         <div className="px-5 py-3 bg-gray-50/95 backdrop-blur sticky top-[60px] md:top-[72px] z-30 font-bold text-gray-800 border-l-4 border-brand-green flex justify-between items-center shadow-sm">
-          <span>领保播客</span>
-          <button className="text-xs text-brand-green border border-brand-green px-2 py-1 rounded active:bg-green-50">RSS 订阅</button>
+          <span>{t('multimedia.podcasts_title')}</span>
+          <button className="text-xs text-brand-green border border-brand-green px-2 py-1 rounded active:bg-green-50">{t('multimedia.rss_btn')}</button>
         </div>
         <div className="p-4 space-y-3">
           {[1, 2, 3, 4].map((i) => (
@@ -40,7 +45,9 @@ const Multimedia: React.FC = () => {
                 {i}
               </div>
               <div className="flex-1 min-w-0">
-                <h5 className="font-medium text-gray-800 text-sm md:text-base truncate">领事保护真实案例解析 #{i}</h5>
+                <h5 className="font-medium text-gray-800 text-sm md:text-base truncate">
+                  {t('multimedia.podcast_title_template').replace('{{i}}', i.toString())}
+                </h5>
                 <div className="flex items-center gap-3 mt-1.5">
                   <div className="h-1.5 flex-1 bg-gray-100 rounded-full overflow-hidden">
                     <div className="h-full bg-brand-green w-1/3 rounded-full"></div>

@@ -1,20 +1,19 @@
 export interface MenuItem {
   id: string;
   icon: string;
-  text: string;
+  text: string; // Used as fallback or key suffix
   path: string;
 }
 
 export interface ChallengeQuestion {
   id: number;
-  question: string;
-  options: string[];
+  // question and options moved to locales
   correctAnswer: number;
 }
 
 export interface SafetyQuestion {
   id: number;
-  question: string;
+  // question moved to locales
   category: 'health' | 'crime' | 'political' | 'nature';
   weight: number;
 }
@@ -22,19 +21,19 @@ export interface SafetyQuestion {
 export interface NotificationItem {
   id: string;
   date: string;
-  title: string;
   link: string;
+  // title moved to locales
 }
 
 export interface KnowledgeCard {
   id: string;
-  title: string;
   image: string;
   link: string;
+  // title moved to locales
 }
 
 export enum SafetyRating {
-  LOW = "低风险",
-  MEDIUM = "中等风险",
-  HIGH = "高风险"
+  LOW = "low",
+  MEDIUM = "medium",
+  HIGH = "high"
 }
