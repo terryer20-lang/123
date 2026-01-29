@@ -2,7 +2,7 @@ export type LanguageCode = 'zh-MO' | 'zh-CN' | 'en' | 'pt';
 
 export const LANGUAGE_LABELS: Record<LanguageCode, string> = {
   'zh-MO': '繁',
-  'zh-CN': '简',
+  'zh-CN': '簡',
   'en': 'EN',
   'pt': 'PT'
 };
@@ -36,11 +36,17 @@ export const translations = {
         protection_sub: "Protection",
         rights: "居民權利",
         rights_sub: "Rights",
-        alerts: "旅遊警示",
-        alerts_sub: "Alerts",
-        emergency: "緊急熱線",
-        emergency_sub: "Hotline",
+        alerts: "活動日程",
+        alerts_sub: "Events",
+        emergency: "資源專區",
+        emergency_sub: "Resources",
         scroll: "下滑瀏覽更多"
+      },
+      quick: {
+        help: "我在海外遇到困難",
+        prepare: "我即將出國",
+        test: "海外旅行安全指數小測試",
+        graphics: "圖文包"
       },
       knowledge: {
         title: "領保燙知識",
@@ -55,8 +61,58 @@ export const translations = {
         more: "查看更多通知"
       }
     },
+    help: {
+      hero_title: "我在海外遇到困難",
+      hero_desc: "在海外無論是留學、旅遊還是參加交流營，遇到困難時，請記住這些求助路徑與自身權益。",
+      contacts_title: "救急必備：",
+      contacts_desc: "遇到緊急情況（如人身安全受威脅、重大事故），請第一時間聯繫：",
+      c_1: "中國外交部全球領事保護與服務應急呼叫中心熱線",
+      c_1_sub: "24 小時開通，全方位支援",
+      c_2: "中國外交部駐澳特派員公署領保熱線",
+      c_3: "澳門特區治安警察局熱線",
+      c_4: "澳門特區旅遊危機處理辦公室熱線",
+      scenarios_title: "常見困境：行動指南",
+      s_passport: "旅行證件遺失了？",
+      s_accident: "生病或發生交通意外？",
+      s_arrest: "被逮捕或拘留？",
+      steps_passport: {
+        1: { t: "報警", d: "立即向當地警察部門報案並取得報警證明。" },
+        2: { t: "線上求助", d: "透過「一戶通」APP 的「海外求助—旅遊途中遺失證件」登記。" },
+        3: { t: "補辦", d: "前往附近的中國駐外使領館申請補辦應急旅行證件。" }
+      },
+      steps_accident: {
+        1: { t: "即時就醫", d: "撥打當地急救或火警電話，第一時間尋求救治。" },
+        2: { t: "聯繫家人", d: "領事官員可協助聯繫在澳親屬。" },
+        3: { t: "法律支援", d: "如涉及意外賠償，可請使領館提供當地律師名單（費用自理）。" }
+      },
+      steps_arrest: {
+        1: { t: "要求見面", d: "你有權要求面見中國領事官員。" },
+        2: { t: "權益保障", d: "領事官員可應要求進行領事探視，瞭解你的需求並保障人道待遇與公平待遇。" }
+      },
+      powers_title: "領事官員權力邊界",
+      can_title: "✅ 可以為你做什麼？",
+      cannot_title: "❌ 「不可以」做什麼？",
+      can_list: [
+        "突發事件：遇戰爭、災害時，敦促當地部門撤離或救助。",
+        "經濟困難：財物失竊時，協助聯繫親友匯款。",
+        "尋找親人：提供尋人管道與方式的資訊。"
+      ],
+      cannot_list: [
+        "不介入糾紛：不介入私人財物、勞務或家庭糾紛。",
+        "不代付費用：不代付醫療、交通、訴訟及任何個人費用。",
+        "不干預司法：不干預駐在國的行政和司法行為，不為違法行為「買單」。",
+        "不提供擔保：不為你購買商品、處理個人事務或租賃物品提供擔保。"
+      ],
+      tips_title: "求助小貼士",
+      t_1_t: "如實告知",
+      t_1_d: "求助時應如實提供個人資訊與事故經過，否則可能影響協助成效。",
+      t_2_t: "保護隱私",
+      t_2_d: "使領館在提供協助時會依法保護你的個人隱私。",
+      t_3_t: "費用自理",
+      t_3_d: "領事保護本身不收費，但求助期間產生的個人開支需由你承擔。"
+    },
     protection: {
-      hero_title: "海外安全的最強後盾",
+      hero_title: "領事保護與協助",
       hero_desc: "無論是留學、畢業旅行還是探親，當你遇到緊急情況時，祖國始終在你身後。",
       definition_title: "什麼是領事保護？",
       definition_desc: "當中國公民在海外正當權益受侵害或需幫助時，中國駐外使領館依法維護其權益的行為。",
@@ -100,6 +156,46 @@ export const translations = {
       fraud_2_d: "誘導切斷聯絡，再向家長索贖金。遇到此類情況應立即向警方核實。",
       footer_hotline: "外交部全球領保熱線"
     },
+    rights: {
+      hero_title: "澳門居民身份權利",
+      hero_desc: "作為澳門居民，你的權利受到《中華人民共和國澳門特別行政區基本法》的全面保護。無論在本地生活或海外旅遊，了解自身權利是保護自己的第一步。",
+      residents_title: "你是哪一類居民？",
+      perm_title: "永久性居民",
+      perm_desc: "享有澳門居留權，可自由進出澳門，不被施加逗留條件，不被驅逐出境。",
+      non_perm_title: "非永久性居民",
+      non_perm_desc: "不享有居留權，但依法領取澳門居民身份證。",
+      core_title: "核心基本權利",
+      core_subtitle: "基本法保障",
+      rights_list: {
+        freedom: { t: "人身與自由", d: "人身自由受保護，不受非法逮捕或搜查。" },
+        speech: { t: "言論與結社", d: "享有言論、新聞、出版、集會及示威的自由。" },
+        movement: { t: "遷徙與出入境", d: "享有遷徙自由，並可依法取得各種旅行證件（如特區護照），自由離開澳門無需特別批准。" },
+        faith: { t: "信仰與文化", d: "享有宗教信仰自由，以及選擇職業、院校及出外求學的自由。" },
+        judicial: { t: "司法保障", d: "有權訴諸法律，向法院提起訴訟並得到律師幫助。" },
+        welfare: { t: "社會福利", d: "享有成立家庭、自願生育及依法享受社會福利與退休保障的權利。" }
+      },
+      overseas_title: "當你在海外：中國公民的身份權利",
+      overseas_subtitle: "身份轉化：領事保護與協助",
+      citizen_def: "誰是中國公民？",
+      citizen_desc: "凡具有中國血統並出生在中國領土（含澳門）者，不論是否持有葡萄牙旅行證件，均為中國公民。",
+      consular_right: "領事權利",
+      consular_desc: "作為中國公民，你在海外享有請求中國政府提供領事保護的權利。",
+      nationality_select: "國籍選擇",
+      nationality_desc: "具中葡雙重血統的居民可根據意願選擇國籍，在選擇前享有基本法規定的權利（國籍限制者除外）。",
+      passport_convenience: "旅行便利",
+      passport_desc: "澳門居民有權領取特區護照，並在多國享有免簽證或落地簽證待遇。",
+      duty_title: "權利與義務並行",
+      duty_subtitle: "在享有廣泛權利的同時",
+      duty_1: "遵守法律",
+      duty_1_desc: "必須遵守澳門特別行政區實行的法律。",
+      duty_2: "尊重他方",
+      duty_2_desc: "在行使權利時，亦應尊重他人的合法權益。",
+      tips_title: "溫馨提示：學生必知",
+      tips_passport: "護照即身份",
+      tips_passport_desc: "澳門特區護照是證明你中國國籍與澳門身份的重要證件。",
+      tips_app: "海外聯繫",
+      tips_app_desc: "建議出國前登錄「中國領事」APP 登記資訊，這是行使領事保護權利的便捷方式。"
+    },
     emergency: {
       title: "外交部全球領事保護與服務\n應急熱線 (24小時)",
       call_btn: "一鍵呼叫",
@@ -111,7 +207,31 @@ export const translations = {
       tips_title: "求助須知",
       tip_1: "遭遇突發緊急情況時，請首先撥打當地報警電話。",
       tip_2: "如需領事協助，請撥打12308熱線。",
-      tip_3: "丟失護照請立即向當地警方掛失並聯繫就近使領館補辦旅行證。"
+      tip_3: "丟失護照請立即向當地警方掛失並聯繫就近使領館補辦旅行證。",
+      page_title: "緊急求助專區",
+      page_subtitle: "海外遇險最強攻略",
+      call_action: "點擊呼叫",
+      copy_action: "複製",
+      main_hotline_label: "中國外交部全球領事保護與服務應急呼叫中心熱線",
+      main_hotline_desc: "24小時開通・全方位守護",
+      local_hotlines_title: "澳門特區支援熱線",
+      hotline_commissioner: "中國外交部駐澳特派員公署領保熱線",
+      hotline_psp: "澳門特區治安警察局熱線",
+      hotline_tourism: "澳門特區旅遊危機處理辦公室熱線",
+      safety_kit_title: "安全工具包",
+      kit_app_title: "中國領事 APP",
+      kit_app_desc: "一鍵登記・緊急求助",
+      kit_macau_title: "一戶通 APP",
+      kit_macau_desc: "澳門居民・線上服務",
+      lost_passport_title: "證件遺失處理流程",
+      step_1_t: "立即報警",
+      step_1_d: "取得報警證明備查",
+      step_2_t: "線上求助",
+      step_2_d: "一戶通「海外求助」登記",
+      step_3_t: "前往使領館",
+      step_3_d: "憑碼補辦旅行證件",
+      step_4_t: "後續處理",
+      step_4_d: "諮詢第三國簽證事宜"
     },
     multimedia: {
       videos_title: "一分鐘短片集",
@@ -132,9 +252,9 @@ export const translations = {
       score_suffix: "分"
     },
     safety: {
-      intro: "請勾選您已完成的準備事項，系統將評估您的出行安全指數。",
+      intro: "請勾選您已完成的準備事項，系統將評估您的出行安全指数。",
       generate_btn: "生成安全報告",
-      result_title: "您的安全指數",
+      result_title: "您的安全指数",
       subjects: {
         health: "健康準備",
         crime: "治安防範",
@@ -179,6 +299,34 @@ export const translations = {
         "4": "您是否備份了護照和簽證複印件？",
         "5": "您是否了解當地的急救電話和使領館聯繫方式？"
       }
+    },
+    prepare: {
+      hero_title: "平安出發，快樂回家！",
+      hero_desc: "無論是畢業旅行還是海外升學，做好準備才能玩得開心、學得安心。這份清單請收好！",
+      progress_title: "出行準備完成度",
+      check_title: "出發前「必做」的 5 件事",
+      check_1_t: "檢查證件",
+      check_1_d: "確保護照有效期在 6 個月以上。複印護照首頁並拍照存檔。",
+      check_2_t: "辦妥簽證",
+      check_2_d: "確認目的地入境要求，確保簽證種類與目的相符，留意停留期限。",
+      check_3_t: "備好保險",
+      check_3_d: "國外醫療費昂貴，建議購買涵蓋海外醫療與人身意外的旅遊保險。",
+      check_4_t: "查詢提醒",
+      check_4_d: "登錄「中國領事服務網」查看目的地安全預警。",
+      check_5_t: "留下聯繫",
+      check_5_d: "將詳細行程發給家人，約定好聯繫方式，確保有人知道你在哪。",
+      alerts_title: "目的地安全預警等級",
+      alert_1: "注意安全",
+      alert_2: "謹慎前往",
+      alert_3: "暫勿前往",
+      luggage_title: "海關小百科：別帶錯行李！",
+      luggage_ok: "✅ 慎帶藥品",
+      luggage_ok_desc: "攜帶處方藥入境建議帶備醫生處方或保留藥物原包裝。",
+      luggage_no: "🚫 拒絕違禁",
+      luggage_no_desc: "切勿為陌生人攜帶行李，嚴禁攜帶毒品、受保護動植物製品等。",
+      fraud_title: "警惕電信詐騙",
+      fraud_alert: "官方提醒",
+      fraud_desc: "中國駐外使領館不會以電話通知你涉案，也不會要求轉賬匯款。接到此類電話請立即掛斷！"
     }
   },
   "zh-CN": {
@@ -209,11 +357,17 @@ export const translations = {
         protection_sub: "Protection",
         rights: "居民权利",
         rights_sub: "Rights",
-        alerts: "旅游警示",
-        alerts_sub: "Alerts",
-        emergency: "紧急热线",
-        emergency_sub: "Hotline",
+        alerts: "活动日程",
+        alerts_sub: "Events",
+        emergency: "资源专区",
+        emergency_sub: "Resources",
         scroll: "下滑浏览更多"
+      },
+      quick: {
+        help: "我在海外遇到困难",
+        prepare: "我即将出国",
+        test: "海外旅行安全指数小测试",
+        graphics: "图文包"
       },
       knowledge: {
         title: "领保烫知识",
@@ -228,8 +382,58 @@ export const translations = {
         more: "查看更多通知"
       }
     },
+    help: {
+      hero_title: "我在海外遇到困难",
+      hero_desc: "在海外无论是留学、旅游还是参加交流营，遇到困难时，请记住这些求助路径与自身权益。",
+      contacts_title: "救急必备：",
+      contacts_desc: "遇到紧急情况（如人身安全受威胁、重大事故），请第一时间联系：",
+      c_1: "中国外交部全球领事保护与服务应急呼叫中心热线",
+      c_1_sub: "24 小时开通，全方位支援",
+      c_2: "中国外交部驻澳特派员公署领保热线",
+      c_3: "澳门特区治安警察局热线",
+      c_4: "澳门特区旅游危机处理办公室热线",
+      scenarios_title: "常见困境：行动指南",
+      s_passport: "旅行证件遗失了？",
+      s_accident: "生病或发生交通意外？",
+      s_arrest: "被逮捕或拘留？",
+      steps_passport: {
+        1: { t: "报警", d: "立即向当地警察部门报案并取得报警证明。" },
+        2: { t: "线上求助", d: "透过「一户通」APP 的「海外求助—旅游途中遗失证件」登记。" },
+        3: { t: "补办", d: "前往附近的中国驻外使领馆申请补办应急旅行证件。" }
+      },
+      steps_accident: {
+        1: { t: "即时就医", d: "拨打当地急救或火警电话，第一时间寻求救治。" },
+        2: { t: "联系家人", d: "领事官员可协助联系在澳亲属。" },
+        3: { t: "法律支援", d: "如涉及意外赔偿，可请使领馆提供当地律师名单（费用自理）。" }
+      },
+      steps_arrest: {
+        1: { t: "要求见面", d: "你有权要求面见中国领事官员。" },
+        2: { t: "权益保障", d: "领事官员可应要求进行领事探视，了解你的需求并保障人道待遇与公平待遇。" }
+      },
+      powers_title: "领事官员权力边界",
+      can_title: "✅ 可以为你做什么？",
+      cannot_title: "❌ 「不可以」做什么？",
+      can_list: [
+        "突发事件：遇战争、灾害时，敦促当地部门撤离或救助。",
+        "经济困难：财物失窃时，协助联系亲友汇款。",
+        "寻找亲人：提供寻人管道与方式的资讯。"
+      ],
+      cannot_list: [
+        "不介入纠纷：不介入私人财物、劳务或家庭纠纷。",
+        "不代付费用：不代付医疗、交通、诉讼及任何个人费用。",
+        "不干预司法：不干预驻在国的行政和司法行为，不为违法行为「买单」。",
+        "不提供担保：不为你购买商品、处理个人事务或租赁物品提供担保。"
+      ],
+      tips_title: "求助小贴士",
+      t_1_t: "如实告知",
+      t_1_d: "求助时应如实提供个人资讯与事故经过，否则可能影响协助成效。",
+      t_2_t: "保护隐私",
+      t_2_d: "使领馆在提供协助时会依法保护你的个人隐私。",
+      t_3_t: "费用自理",
+      t_3_d: "领事保护本身不收费，但求助期间产生的个人开支需由你承担。"
+    },
     protection: {
-      hero_title: "海外安全的最强后盾",
+      hero_title: "领事保护与协助",
       hero_desc: "无论是留学、毕业旅行还是探亲，当你遇到紧急情况时，祖国始终在你身后。",
       definition_title: "什么是领事保护？",
       definition_desc: "当中国公民在海外正当权益受侵害或需帮助时，中国驻外使领馆依法维护其权益的行为。",
@@ -273,6 +477,46 @@ export const translations = {
       fraud_2_d: "诱导切断联络，再向家长索赎金。遇到此类情况应立即向警方核实。",
       footer_hotline: "外交部全球领保热线"
     },
+    rights: {
+      hero_title: "澳门居民身份权利",
+      hero_desc: "作为澳门居民，你的权利受到《中华人民共和国澳门特别行政区基本法》的全面保护。无论在本地生活或海外旅游，了解自身权利是保护自己的第一步。",
+      residents_title: "你是哪一类居民？",
+      perm_title: "永久性居民",
+      perm_desc: "享有澳门居留权，可自由进出澳门，不被施加逗留条件，不被驱逐出境。",
+      non_perm_title: "非永久性居民",
+      non_perm_desc: "不享有居留权，但依法领取澳门居民身份证。",
+      core_title: "核心基本权利",
+      core_subtitle: "基本法保障",
+      rights_list: {
+        freedom: { t: "人身与自由", d: "人身自由受保护，不受非法逮捕或搜查。" },
+        speech: { t: "言论与结社", d: "享有言论、新闻、出版、集会及示威的自由。" },
+        movement: { t: "遷徙与出入境", d: "享有遷徙自由，并可依法取得各种旅行证件（如特区护照），自由离开澳門无需特别批准。" },
+        faith: { t: "信仰与文化", d: "享有宗教信仰自由，以及选择职业、院校及出外求学的自由。" },
+        judicial: { t: "司法保障", d: "有权诉诸法律，向法院提起诉讼并得到律师帮助。" },
+        welfare: { t: "社会福利", d: "享有成立家庭、自愿生育及依法享受社会福利与退休保障的权利。" }
+      },
+      overseas_title: "当你在海外：中国公民的身份权利",
+      overseas_subtitle: "身份转化：领事保护与协助",
+      citizen_def: "谁是中国公民？",
+      citizen_desc: "凡具有中国血统并出生在中国领土（含澳門）者，不论是否持有葡萄牙旅行证件，均为中国公民。",
+      consular_right: "领事权利",
+      consular_desc: "作为中国公民，你在海外享有请求中国政府提供领事保护的权利。",
+      nationality_select: "国籍选择",
+      nationality_desc: "具中葡双重血统的居民可根据意愿选择国籍，在选择前享有基本法规定的权利（国籍限制者除外）。",
+      passport_convenience: "旅行便利",
+      passport_desc: "澳门居民有权领取特区护照，并在多国享有免签证或落地签证待遇。",
+      duty_title: "权利与义务并行",
+      duty_subtitle: "在享有广泛权利的同时",
+      duty_1: "遵守法律",
+      duty_1_desc: "必须遵守澳门特别行政区实行的法律。",
+      duty_2: "尊重他方",
+      duty_2_desc: "在行使权利时，亦应尊重他人的合法权益。",
+      tips_title: "温馨提示：学生必知",
+      tips_passport: "护照即身份",
+      tips_passport_desc: "澳门特区护照是证明你中国国籍与澳门身份的重要证件。",
+      tips_app: "海外联系",
+      tips_app_desc: "建议出国前登录「中国领事」APP 登记资讯，这是行使领事保护权利的便捷方式。"
+    },
     emergency: {
       title: "外交部全球领事保护与服务\n应急热线 (24小时)",
       call_btn: "一键呼叫",
@@ -284,7 +528,31 @@ export const translations = {
       tips_title: "求助须知",
       tip_1: "遭遇突发紧急情况时，请首先拨打当地报警电话。",
       tip_2: "如需领事协助，请拨打12308热线。",
-      tip_3: "丢失护照请立即向当地警方挂失并联系就近使领馆补办旅行证。"
+      tip_3: "丢失护照请立即向当地警方挂失并联系就近使领馆补办旅行证。",
+      page_title: "紧急求助专区",
+      page_subtitle: "海外遇险最强攻略",
+      call_action: "点击呼叫",
+      copy_action: "复制",
+      main_hotline_label: "中国外交部全球领事保护与服务应急呼叫中心热线",
+      main_hotline_desc: "24小时开通・全方位守护",
+      local_hotlines_title: "澳门特区支援热线",
+      hotline_commissioner: "中国外交部驻澳特派员公署领保热线",
+      hotline_psp: "澳门特区治安警察局热线",
+      hotline_tourism: "澳门特区旅游危机处理办公室热线",
+      safety_kit_title: "安全工具包",
+      kit_app_title: "中国领事 APP",
+      kit_app_desc: "一键登记・紧急求助",
+      kit_macau_title: "一户通 APP",
+      kit_macau_desc: "澳门居民・线上服务",
+      lost_passport_title: "证件遗失处理流程",
+      step_1_t: "立即报警",
+      step_1_d: "取得报警证明备查",
+      step_2_t: "线上求助",
+      step_2_d: "一户通「海外求助」登记",
+      step_3_t: "前往使领馆",
+      step_3_d: "凭码补办旅行证件",
+      step_4_t: "后续处理",
+      step_4_d: "咨询第三国签证事宜"
     },
     multimedia: {
       videos_title: "一分钟短片集",
@@ -310,7 +578,7 @@ export const translations = {
       result_title: "您的安全指数",
       subjects: {
         health: "健康准备",
-        crime: "治安防范",
+        crime: "治安防範",
         political: "政策了解",
         contact: "紧急联络",
         docs: "证件备份"
@@ -325,15 +593,15 @@ export const translations = {
     },
     data: {
       notifications: {
-        "1": "最新旅游警示更新：东南亚地区",
-        "2": "更换特区护照新规定说明会",
-        "3": "2026年度领保之星招募计划",
-        "4": "圣诞假期海外出行安全提示"
+        "1": "最新旅遊警示更新：東南亞地區",
+        "2": "更換特區護照新規定說明會",
+        "3": "2026年度領保之星招募計劃",
+        "4": "聖誕假期海外出行安全提示"
       },
       knowledge: {
-        "1": "如何遗失护照？",
-        "2": "紧急联络方式",
-        "3": "领事保护范围"
+        "1": "如何遺失護照？",
+        "2": "緊急聯絡方式",
+        "3": "領事保護範圍"
       },
       quiz: {
         "1": {
@@ -352,6 +620,34 @@ export const translations = {
         "4": "您是否备份了护照和签证复印件？",
         "5": "您是否了解当地的急救电话和使领馆联系方式？"
       }
+    },
+    prepare: {
+      hero_title: "平安出发，快乐回家！",
+      hero_desc: "无论是毕业旅行还是海外升学，做好准备才能玩得开心、学得安心。这份清单请收好！",
+      progress_title: "出行准备完成度",
+      check_title: "出发前「必做」的 5 件事",
+      check_1_t: "检查证件",
+      check_1_d: "确保护照有效期在 6 个月以上。复印护照首页并拍照存档。",
+      check_2_t: "办妥签证",
+      check_2_d: "确认目的地入境要求，确保签证种类与目的相符，留意停留期限。",
+      check_3_t: "备好保险",
+      check_3_d: "国外医疗费昂贵，建议购买涵盖海外医疗与人身意外的旅游保险。",
+      check_4_t: "查询提醒",
+      check_4_d: "登录「中国领事服务网」查看目的地安全预警。",
+      check_5_t: "留下联系",
+      check_5_d: "将详细行程发给家人，约定好联系方式，确保有人知道你在哪。",
+      alerts_title: "目的地安全预警等级",
+      alert_1: "注意安全",
+      alert_2: "谨慎前往",
+      alert_3: "暂勿前往",
+      luggage_title: "海关小百科：别带错行李！",
+      luggage_ok: "✅ 慎带药品",
+      luggage_ok_desc: "携带处方药入境建议带备医生处方或保留药物原包装。",
+      luggage_no: "🚫 拒绝违禁",
+      luggage_no_desc: "切勿为陌生人携带行李，严禁携带毒品、受保护动植物制品等。",
+      fraud_title: "警惕电信诈骗",
+      fraud_alert: "官方提醒",
+      fraud_desc: "中国驻外使领馆不会以电话通知你涉案，也不会要求转账汇款。接到此类电话请立即挂断！"
     }
   },
   "en": {
@@ -382,11 +678,17 @@ export const translations = {
         protection_sub: "Consular",
         rights: "Rights",
         rights_sub: "Resident",
-        alerts: "Alerts",
-        alerts_sub: "Travel",
-        emergency: "Hotline",
-        emergency_sub: "Emergency",
+        alerts: "Events",
+        alerts_sub: "Calendar",
+        emergency: "Resources",
+        emergency_sub: "Zone",
         scroll: "Scroll for more"
+      },
+      quick: {
+        help: "Overseas Assistance",
+        prepare: "Going Abroad",
+        test: "Safety Index Quiz",
+        graphics: "Infographics"
       },
       knowledge: {
         title: "Knowledge",
@@ -401,8 +703,58 @@ export const translations = {
         more: "View More"
       }
     },
+    help: {
+      hero_title: "Overseas Assistance",
+      hero_desc: "Whether studying, traveling, or attending exchange camps, remember these paths for help and your rights when facing difficulties abroad.",
+      contacts_title: "Emergency Hotlines",
+      contacts_desc: "In emergencies (threats to safety, major accidents), contact immediately:",
+      c_1: "Ministry of Foreign Affairs Global Emergency Call Center",
+      c_1_sub: "24/7 Full Support",
+      c_2: "MFA Commissioner's Office in Macao Hotline",
+      c_3: "Macao PSP Hotline",
+      c_4: "Macao Tourism Crisis Office Hotline",
+      scenarios_title: "Common Scenarios",
+      s_passport: "Lost Passport?",
+      s_accident: "Accident or Illness?",
+      s_arrest: "Arrested?",
+      steps_passport: {
+        1: { t: "Report", d: "Report to local police immediately and get a certificate." },
+        2: { t: "Online Help", d: "Register via 'Macao One Account' App - 'Lost Travel Docs'." },
+        3: { t: "Reissue", d: "Apply for emergency travel documents at the nearest Chinese Embassy." }
+      },
+      steps_accident: {
+        1: { t: "Medical Aid", d: "Call local emergency/fire for immediate help." },
+        2: { t: "Family", d: "Consular officials can help contact relatives in Macao." },
+        3: { t: "Legal Aid", d: "For compensation, ask Embassy for a list of local lawyers (self-funded)." }
+      },
+      steps_arrest: {
+        1: { t: "Request Meeting", d: "You have the right to ask to see a Chinese consular official." },
+        2: { t: "Rights Protection", d: "Consuls can visit to understand needs and ensure humane/fair treatment." }
+      },
+      powers_title: "Consular Power Boundaries",
+      can_title: "✅ What CAN they do?",
+      cannot_title: "❌ What can they NOT do?",
+      can_list: [
+        "Emergencies: Urge local authorities for evacuation/rescue in war/disaster.",
+        "Financial: Help contact family for money transfer if stolen.",
+        "Missing Persons: Provide info on channels to find people."
+      ],
+      cannot_list: [
+        "Disputes: Cannot intervene in private property, labor, or family disputes.",
+        "Payments: Cannot pay for medical, transport, legal, or personal fees.",
+        "Judicial: Cannot interfere in local justice or 'pay' for illegal acts.",
+        "Guarantees: Cannot provide guarantees for purchases, rentals, or personal affairs."
+      ],
+      tips_title: "Help Tips",
+      t_1_t: "Be Truthful",
+      t_1_d: "Provide accurate info and accident details, or it may affect assistance.",
+      t_2_t: "Privacy",
+      t_2_d: "Embassies protect your privacy by law when providing assistance.",
+      t_3_t: "Self-Funded",
+      t_3_d: "Consular protection is free, but personal costs incurred are yours."
+    },
     protection: {
-      hero_title: "Strongest Backing for Safety",
+      hero_title: "Consular Protection & Assistance",
       hero_desc: "Whether studying, traveling, or visiting relatives, the motherland is always behind you.",
       definition_title: "What is Consular Protection?",
       definition_desc: "Actions by embassies to protect rights of Chinese citizens abroad.",
@@ -446,18 +798,75 @@ export const translations = {
       fraud_2_d: "Luring to cut contact to extort parents. Verify with police immediately.",
       footer_hotline: "Global Consular Hotline"
     },
+    rights: {
+      hero_title: "Macao Resident Rights",
+      hero_desc: "As a Macao resident, your rights are fully protected by the 'Basic Law'. Knowing your rights is the first step to protecting yourself.",
+      residents_title: "Which Resident Are You?",
+      perm_title: "Permanent Resident",
+      perm_desc: "Right of abode, freedom of entry/exit, no deportation conditions.",
+      non_perm_title: "Non-Permanent Resident",
+      non_perm_desc: "No right of abode, but legally issued ID card.",
+      core_title: "Core Basic Rights",
+      core_subtitle: "Protected by Basic Law",
+      rights_list: {
+        freedom: { t: "Personal Freedom", d: "Protected against illegal arrest or search." },
+        speech: { t: "Speech & Assembly", d: "Freedom of speech, press, publication, and demonstration." },
+        movement: { t: "Movement", d: "Freedom to move, obtain travel docs (SAR passport), and leave Macao." },
+        faith: { t: "Faith & Culture", d: "Freedom of religion, career choice, and education abroad." },
+        judicial: { t: "Judicial Protection", d: "Right to legal action and lawyer assistance in courts." },
+        welfare: { t: "Social Welfare", d: "Right to family, reproduction, social welfare, and retirement." }
+      },
+      overseas_title: "When Overseas: Chinese Citizen Rights",
+      overseas_subtitle: "Identity Shift: Consular Protection",
+      citizen_def: "Who is a Chinese Citizen?",
+      citizen_desc: "Chinese descent born in Chinese territory (inc. Macao), regardless of Portuguese travel docs.",
+      consular_right: "Consular Rights",
+      consular_desc: "Right to request protection from the Chinese government when overseas.",
+      nationality_select: "Nationality Selection",
+      nationality_desc: "Sino-Portuguese dual heritage residents can choose nationality voluntarily.",
+      passport_convenience: "Travel Ease",
+      passport_desc: "Macao residents entitled to SAR passport with visa-free access to many countries.",
+      duty_title: "Rights & Duties",
+      duty_subtitle: "With Rights Come Responsibilities",
+      duty_1: "Obey Laws",
+      duty_1_desc: "Must obey laws of the Macao SAR.",
+      duty_2: "Respect Others",
+      duty_2_desc: "Respect the lawful rights of others when exercising yours.",
+      tips_title: "Tips: Students Must Know",
+      tips_passport: "Passport is Identity",
+      tips_passport_desc: "SAR Passport is the key proof of your Chinese citizenship and Macao identity.",
+      tips_app: "Overseas Contact",
+      tips_app_desc: "Register on 'China Consular' App before departure for safety."
+    },
     emergency: {
-      title: "Global Emergency Call Center\nfor Consular Protection (24H)",
-      call_btn: "Call Now",
-      location_btn: "Find Consulate",
+      page_title: "Emergency Zone",
+      page_subtitle: "Strongest Strategy for Distress",
+      call_action: "CALL",
+      copy_action: "COPY",
+      location_btn: "📍 Get Location",
       locating: "Locating...",
-      location_found: "Location found",
-      location_error: "Error locating",
-      location_unsupported: "Geolocation not supported",
-      tips_title: "Important Tips",
-      tip_1: "In an emergency, call local police first.",
-      tip_2: "Call 12308 for consular assistance.",
-      tip_3: "Report lost passports to police immediately."
+      location_found: "Location Found",
+      location_error: "Location Error",
+      main_hotline_label: "Global Consular Hotline",
+      main_hotline_desc: "24/7 Full Support",
+      local_hotlines_title: "Macao Support Lines",
+      hotline_commissioner: "MFA Commissioner's Office",
+      hotline_psp: "PSP (Overseas)",
+      hotline_tourism: "Tourism Crisis Office",
+      safety_kit_title: "Safety Kit",
+      kit_app_title: "China Consular APP",
+      kit_app_desc: "Register & Help",
+      kit_macau_title: "Macao One Account",
+      kit_macau_desc: "Online Services",
+      lost_passport_title: "Lost Passport Guide",
+      step_1_t: "Report",
+      step_1_d: "Get police report",
+      step_2_t: "Online Help",
+      step_2_d: "Macao One Account",
+      step_3_t: "Embassy",
+      step_3_d: "Apply for travel doc",
+      step_4_t: "Follow-up",
+      step_4_d: "Check visa status"
     },
     multimedia: {
       videos_title: "1-Min Video Series",
@@ -475,179 +884,6 @@ export const translations = {
       points_earned: "Points Earned",
       play_again: "Play Again",
       leaderboard_title: "Weekly Leaderboard",
-      score_suffix: "pts"
-    },
-    safety: {
-      intro: "Please check the items you have prepared. The system will evaluate your travel safety index.",
-      generate_btn: "Generate Report",
-      result_title: "Your Safety Index",
-      subjects: {
-        health: "Health",
-        crime: "Safety",
-        political: "Policy",
-        contact: "Contact",
-        docs: "Documents"
-      },
-      suggestions: {
-        passport: "⚠️ Highly recommended to backup passport/visa copies separately.",
-        insurance: "⚠️ Medical costs abroad are high. Travel insurance is essential.",
-        success: "🎉 You are well prepared. Have a safe trip!",
-        title: "Suggestions:"
-      },
-      retake_btn: "Retake Test"
-    },
-    data: {
-      notifications: {
-        "1": "Travel Alert Update: Southeast Asia",
-        "2": "New Passport Renewal Regulations Seminar",
-        "3": "2026 Consular Star Recruitment Plan",
-        "4": "Christmas Holiday Travel Safety Tips"
-      },
-      knowledge: {
-        "1": "Lost Passport?",
-        "2": "Emergency Contacts",
-        "3": "Consular Scope"
-      },
-      quiz: {
-        "1": {
-          q: "What should you do first if you lose your passport abroad?",
-          o: ["Return home immediately", "Report to local police and contact consulate", "Post on social media for help", "Find local community groups"]
-        },
-        "2": {
-          q: "What is the Global Emergency Call Center number?",
-          o: ["12345", "110", "12308", "911"]
-        }
-      },
-      safety_questions: {
-        "1": "Have you purchased travel insurance covering medical & accidents?",
-        "2": "Do you know the local safety situation and common crimes?",
-        "3": "Have you registered with the Ministry of Foreign Affairs?",
-        "4": "Have you backed up copies of your passport and visa?",
-        "5": "Do you know local emergency numbers and consulate contacts?"
-      }
-    }
-  },
-  "pt": {
-    app: {
-      title: "Proteção Consular",
-      copyright: "© 2024 Proteção Consular de Macau",
-      placeholder: "Conteúdo em Breve...",
-      construction: "🚧"
-    },
-    menu: {
-      title: "Menu",
-      "star-challenge": "Desafio Estrela Consular",
-      "safety-test": "Índice de Segurança",
-      "going-abroad": "Vou para o Estrangeiro",
-      "overseas-help": "Assistência no Estrangeiro",
-      "emergency": "Zona de Emergência",
-      "consular-protection": "Proteção Consular",
-      "resident-rights": "Direitos de Residente",
-      "videos": "Vídeos de 1 Min",
-      "podcasts": "Podcasts",
-      "events": "Eventos",
-      "resources": "Recursos",
-      "contact": "Contacte-nos"
-    },
-    home: {
-      hero: {
-        protection: "Proteção",
-        protection_sub: "Consular",
-        rights: "Direitos",
-        rights_sub: "Residente",
-        alerts: "Alertas",
-        alerts_sub: "Viagem",
-        emergency: "Linha",
-        emergency_sub: "Emergência",
-        scroll: "Rolar para mais"
-      },
-      knowledge: {
-        title: "Informações",
-        read: "Ler",
-        label: "INFORMAÇÃO"
-      },
-      notifications: {
-        title: "Notificações",
-        col_date: "Data",
-        col_content: "Conteúdo",
-        col_download: "DL",
-        more: "Ver Mais"
-      }
-    },
-    protection: {
-      hero_title: "O Seu Escudo no Estrangeiro",
-      hero_desc: "Em caso de emergência no estrangeiro, a pátria está sempre consigo.",
-      definition_title: "O que é Proteção Consular?",
-      definition_desc: "Ações das embaixadas para proteger os direitos dos cidadãos chineses.",
-      who_title: "Quem é Elegível?",
-      who_1_title: "Compatriotas de Macau",
-      who_1_desc: "Ascendência chinesa nascida em território chinês (inc. Macau) são cidadãos chineses.",
-      who_2_title: "Luso-Chineses",
-      who_2_desc: "Podem escolher a nacionalidade de acordo com a preferência.",
-      scope_title: "O Que Podem Fazer?",
-      scope_subtitle: "Âmbito de Assistência",
-      tab_can: "✅ PODE",
-      tab_cannot: "❌ NÃO PODE",
-      can_list: {
-        1: { t: "Emergência", d: "Evacuação ou socorro em guerra/desastre" },
-        2: { t: "Segurança", d: "Instar a polícia a tratar casos com justiça" },
-        3: { t: "Visitação", d: "Visitas consulares em caso de prisão" },
-        4: { t: "Documentos", d: "Emitir documentos de viagem de emergência" },
-        5: { t: "Legal/Médico", d: "Fornecer listas de médicos/advogados" },
-        6: { t: "Família", d: "Ajudar a contactar parentes em Macau" }
-      },
-      cannot_list: {
-        1: { t: "Disputas Privadas", d: "Não intervém em disputas financeiras" },
-        2: { t: "Reportar Crimes", d: "Não pode reportar crimes por si" },
-        3: { t: "Pagar Contas", d: "Não paga alimentação, transporte ou taxas" },
-        4: { t: "Judicial", d: "Não interfere em processos judiciais" },
-        5: { t: "Empregos", d: "Não encontra empregos nem fornece garantias" }
-      },
-      checklist_title: "5 Coisas a Fazer Antes de Partir",
-      checklist_items: {
-        1: "Verificar Docs: Passaporte válido por 6+ meses",
-        2: "Alertas: Verificar Rede de Serviços Consulares",
-        3: "Seguro: Comprar seguro de viagem adequado",
-        4: "Itinerário: Partilhar agenda com a família",
-        5: "Registo: Usar App 'China Consular'"
-      },
-      fraud_title: "Cuidado com Fraudes",
-      fraud_subtitle: "Estudantes Atenção!",
-      fraud_1_t: "Falso Consulado",
-      fraud_1_d: "Alega envolvimento criminal? Falso. Nunca pedimos transferências.",
-      fraud_2_t: "Sequestro Virtual",
-      fraud_2_d: "Induzir corte de contacto para extorquir pais. Verifique com a polícia.",
-      footer_hotline: "Linha Global Consular"
-    },
-    emergency: {
-      title: "Linha de Emergência Global\nProteção Consular (24H)",
-      call_btn: "Ligar Agora",
-      location_btn: "Encontrar Consulado",
-      locating: "Localizando...",
-      location_found: "Localização encontrada",
-      location_error: "Erro ao localizar",
-      location_unsupported: "Geolocalização não suportada",
-      tips_title: "Dicas Importantes",
-      tip_1: "Em emergência, ligue primeiro para a polícia local.",
-      tip_2: "Ligue 12308 para assistência consular.",
-      tip_3: "Reporte perda de passaporte à polícia imediatamente."
-    },
-    multimedia: {
-      videos_title: "Série de Vídeos de 1 Min",
-      swipe_hint: "Deslize para ver",
-      video_title_template: "Guia de Segurança - Ep {{i}}: Importância dos Documentos",
-      podcasts_title: "Podcasts Consulares",
-      rss_btn: "Assinar RSS",
-      podcast_title_template: "Casos Reais de Proteção Consular #{{i}}"
-    },
-    challenge: {
-      my_score: "Minha Pontuação",
-      weekly_challenge: "Desafio Semanal",
-      question_progress: "Q {{current}} / {{total}}",
-      complete_title: "Desafio Completo!",
-      points_earned: "Pontos Ganhos",
-      play_again: "Jogar Novamente",
-      leaderboard_title: "Ranking Semanal",
       score_suffix: "pts"
     },
     safety: {
@@ -698,6 +934,34 @@ export const translations = {
         "4": "Fez cópias de segurança do passaporte e visto?",
         "5": "Sabe os números de emergência locais e contactos consulares?"
       }
+    },
+    prepare: {
+      hero_title: "Partida Segura, Regresso Feliz!",
+      hero_desc: "Seja para graduação ou estudo no exterior, uma boa preparação garante uma viagem segura. Guarde esta lista!",
+      progress_title: "Progresso da Preparação",
+      check_title: "5 Coisas a Fazer Antes de Partir",
+      check_1_t: "Verificar Documentos",
+      check_1_d: "Passaporte válido por 6+ meses. Copie e fotografe a página principal.",
+      check_2_t: "Obter Visto",
+      check_2_d: "Verifique os requisitos de entrada, tipo de visto e duração da estadia.",
+      check_3_t: "Comprar Seguro",
+      check_3_d: "Custos médicos no exterior são altos. Compre seguro médico e de acidentes.",
+      check_4_t: "Verificar Alertas",
+      check_4_d: "Consulte 'Rede de Serviços Consulares da China' para alertas de segurança.",
+      check_5_t: "Deixar Contacto",
+      check_5_d: "Envie o itinerário para a família, combine contacto, garanta que alguém sabe onde está.",
+      alerts_title: "Níveis de Alerta de Segurança",
+      alert_1: "Preste Atenção",
+      alert_2: "Cautela",
+      alert_3: "Não Vá",
+      luggage_title: "Dicas de Alfândega: Bagagem Certa!",
+      luggage_ok: "✅ Medicamentos",
+      luggage_ok_desc: "Traga receita médica ou mantenha a embalagem original.",
+      luggage_no: "🚫 Proibido",
+      luggage_no_desc: "Nunca leve bagagem de estranhos. Sem drogas ou produtos protegidos.",
+      fraud_title: "Cuidado com Fraudes de Telecom",
+      fraud_alert: "Alerta Oficial",
+      fraud_desc: "Embaixadas chinesas NUNCA ligam sobre casos ou pedem transferências. Desligue imediatamente!"
     }
   }
 };

@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Challenge from './pages/Challenge';
@@ -7,6 +7,9 @@ import SafetyIndex from './pages/SafetyIndex';
 import Emergency from './pages/Emergency';
 import Multimedia from './pages/Multimedia';
 import Protection from './pages/Protection';
+import Rights from './pages/Rights';
+import Help from './pages/Help';
+import Prepare from './pages/Prepare';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
 // Placeholder components for routes not fully detailed in requirement
@@ -21,9 +24,21 @@ const PlaceholderPage = ({ titleKey }: { titleKey: string }) => {
   );
 };
 
+// Component to handle scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const AppRoutes = () => {
    return (
       <Layout>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/challenge" element={<Challenge />} />
@@ -31,10 +46,10 @@ const AppRoutes = () => {
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/multimedia" element={<Multimedia />} />
           <Route path="/protection" element={<Protection />} />
+          <Route path="/rights" element={<Rights />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/prepare" element={<Prepare />} />
           
-          <Route path="/prepare" element={<PlaceholderPage titleKey="menu.going-abroad" />} />
-          <Route path="/help" element={<PlaceholderPage titleKey="menu.overseas-help" />} />
-          <Route path="/rights" element={<PlaceholderPage titleKey="menu.resident-rights" />} />
           <Route path="/events" element={<PlaceholderPage titleKey="menu.events" />} />
           <Route path="/resources" element={<PlaceholderPage titleKey="menu.resources" />} />
           <Route path="/contact" element={<PlaceholderPage titleKey="menu.contact" />} />

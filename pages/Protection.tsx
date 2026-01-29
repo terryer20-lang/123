@@ -21,10 +21,7 @@ const Protection: React.FC = () => {
       <div className="px-5 pt-4 pb-8 bg-gradient-to-br from-brand-red to-red-600 text-white rounded-b-3xl shadow-xl mb-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 text-9xl opacity-10 transform translate-x-8 -translate-y-8">🛡️</div>
         <div className="relative z-10">
-          <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold mb-3 border border-white/20">
-            STRONGEST BACKING
-          </div>
-          <h1 className="text-3xl font-bold leading-tight mb-3">
+          <h1 className="text-3xl font-bold leading-tight mb-3 mt-4">
             {t('protection.hero_title')}
           </h1>
           <p className="text-white/90 text-sm leading-relaxed max-w-sm">

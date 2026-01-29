@@ -42,40 +42,40 @@ const Home: React.FC = () => {
           </div>
         </Link>
 
-        {/* Column 3: Travel Alerts (Orange) */}
+        {/* Column 3: Events (Orange) - Was Travel Alerts */}
         <Link 
-          to="/safety-index" 
+          to="/events" 
           className="group relative flex-1 bg-brand-orange flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
           style={{ animationDelay: '200ms' }}
         >
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📢</div>
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📅</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
              <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.alerts_sub')}</p>
           </div>
         </Link>
 
-        {/* Column 4: Emergency (Green - Safety) */}
+        {/* Column 4: Resources (Green) - Was Emergency */}
         <Link 
-          to="/emergency" 
+          to="/resources" 
           className="group relative flex-1 bg-brand-green flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
           style={{ animationDelay: '300ms' }}
         >
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🚨</div>
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📚</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
              <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.emergency_sub')}</p>
           </div>
         </Link>
 
-        {/* Scroll Indicator - Moved Up */}
-        <div className="absolute bottom-[env(safe-area-inset-bottom)] mb-20 md:mb-24 left-0 right-0 flex justify-center pointer-events-none z-20 opacity-0 animate-fade-in" style={{ animationDelay: '1000ms' }}>
+        {/* Scroll Indicator - Moved to Middle */}
+        <div className="absolute top-1/2 left-0 right-0 flex justify-center pointer-events-none z-20 opacity-0 animate-fade-in -translate-y-1/2" style={{ animationDelay: '1000ms' }}>
           <button 
             onClick={(e) => { e.preventDefault(); scrollToContent(); }}
-            className="pointer-events-auto flex flex-col items-center gap-1 md:gap-2 bg-black/20 backdrop-blur-md px-4 py-2 md:px-6 rounded-full text-white hover:bg-black/40 transition-colors border border-white/20 shadow-lg"
+            className="pointer-events-auto flex flex-col items-center gap-1 md:gap-2 bg-black/30 backdrop-blur-md px-5 py-3 rounded-full text-white hover:bg-black/50 transition-colors border border-white/20 shadow-2xl hover:scale-105 transform duration-300"
           >
-            <span className="text-[10px] md:text-xs font-medium tracking-widest opacity-90">{t('home.hero.scroll')}</span>
-            <svg className="w-3 h-3 md:w-4 md:h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="text-xs font-bold tracking-widest opacity-100 uppercase">{t('home.hero.scroll')}</span>
+            <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </button>
@@ -85,8 +85,30 @@ const Home: React.FC = () => {
       {/* Content Section */}
       <div id="home-content" className="bg-white relative z-10 min-h-screen rounded-t-3xl -mt-4 shadow-[0_-5px_25px_rgba(0,0,0,0.1)]">
         
+        {/* Quick Access Buttons */}
+        <section className="px-4 py-8 pb-4">
+           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <Link to="/help" className="bg-red-50 hover:bg-red-100 border border-red-100 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-colors active:scale-95 duration-200">
+                  <div className="text-3xl mb-1">🆘</div>
+                  <span className="font-bold text-gray-800 text-sm leading-tight">{t('home.quick.help')}</span>
+              </Link>
+              <Link to="/prepare" className="bg-blue-50 hover:bg-blue-100 border border-blue-100 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-colors active:scale-95 duration-200">
+                  <div className="text-3xl mb-1">✈️</div>
+                  <span className="font-bold text-gray-800 text-sm leading-tight">{t('home.quick.prepare')}</span>
+              </Link>
+              <Link to="/safety-index" className="bg-orange-50 hover:bg-orange-100 border border-orange-100 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-colors active:scale-95 duration-200">
+                  <div className="text-3xl mb-1">📊</div>
+                  <span className="font-bold text-gray-800 text-sm leading-tight">{t('home.quick.test')}</span>
+              </Link>
+               <Link to="/resources" className="bg-green-50 hover:bg-green-100 border border-green-100 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-colors active:scale-95 duration-200">
+                  <div className="text-3xl mb-1">🖼️</div>
+                  <span className="font-bold text-gray-800 text-sm leading-tight">{t('home.quick.graphics')}</span>
+              </Link>
+           </div>
+        </section>
+
         {/* Knowledge Section */}
-        <section className="pt-8 pb-6 border-b border-gray-100">
+        <section className="pt-4 pb-6 border-b border-gray-100">
           <div className="px-5 mb-4 flex items-center gap-3">
             <div className="w-1.5 h-5 md:h-6 bg-brand-red rounded-full"></div>
             <h2 className="text-lg md:text-xl font-bold text-gray-800">{t('home.knowledge.title')}</h2>
