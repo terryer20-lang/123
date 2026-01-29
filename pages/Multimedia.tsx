@@ -2,25 +2,26 @@ import React from 'react';
 
 const Multimedia: React.FC = () => {
   return (
-    <div className="pb-20">
+    <div className="pb-24 pt-16 md:pt-20">
       {/* Video Section */}
       <div className="mb-8">
-        <div className="px-4 py-3 bg-gray-100 sticky top-16 z-10 font-bold text-gray-700">
-          一分钟短片集
+        <div className="px-5 py-3 bg-gray-50/95 backdrop-blur sticky top-[60px] md:top-[72px] z-30 font-bold text-gray-800 border-l-4 border-brand-blue flex justify-between items-center shadow-sm">
+          <span>一分钟短片集</span>
+          <span className="text-xs text-brand-blue font-normal">滑动查看 &rarr;</span>
         </div>
-        <div className="overflow-x-auto flex gap-4 p-4 no-scrollbar">
+        <div className="overflow-x-auto flex gap-4 p-5 no-scrollbar touch-pan-x">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="flex-none w-72 snap-center">
-              <div className="aspect-video bg-gray-800 rounded-lg mb-2 relative group overflow-hidden">
-                <img src={`https://picsum.photos/400/225?random=${i}`} alt="Video Thumbnail" className="w-full h-full object-cover opacity-80" />
+            <div key={i} className="flex-none w-[75vw] md:w-80 snap-center group">
+              <div className="aspect-video bg-gray-800 rounded-xl mb-3 relative overflow-hidden shadow-md">
+                <img src={`https://picsum.photos/400/225?random=${i}`} alt="Video Thumbnail" className="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/40">
                     <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-white border-b-8 border-b-transparent ml-1"></div>
                   </div>
                 </div>
+                <span className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">01:30</span>
               </div>
-              <h4 className="font-medium text-gray-800 line-clamp-2">海外出行安全指南 - 第{i}集：证件保管的重要性</h4>
-              <span className="text-xs text-gray-500">01:30</span>
+              <h4 className="font-medium text-gray-800 text-sm md:text-base line-clamp-2 leading-snug">海外出行安全指南 - 第{i}集：证件保管的重要性</h4>
             </div>
           ))}
         </div>
@@ -28,27 +29,27 @@ const Multimedia: React.FC = () => {
 
       {/* Podcast Section */}
       <div>
-        <div className="px-4 py-3 bg-gray-100 sticky top-16 z-10 font-bold text-gray-700 flex justify-between items-center">
+        <div className="px-5 py-3 bg-gray-50/95 backdrop-blur sticky top-[60px] md:top-[72px] z-30 font-bold text-gray-800 border-l-4 border-brand-green flex justify-between items-center shadow-sm">
           <span>领保播客</span>
-          <button className="text-xs text-macau-green border border-macau-green px-2 py-0.5 rounded">RSS 订阅</button>
+          <button className="text-xs text-brand-green border border-brand-green px-2 py-1 rounded active:bg-green-50">RSS 订阅</button>
         </div>
-        <div className="p-4 space-y-4">
+        <div className="p-4 space-y-3">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="bg-white p-3 rounded-lg shadow-sm flex gap-3 items-center">
-              <div className="w-12 h-12 bg-indigo-100 rounded flex items-center justify-center text-indigo-500 font-bold shrink-0">
-                Vol.{i}
+            <div key={i} className="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex gap-3 items-center active:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-indigo-50 rounded-lg flex items-center justify-center text-brand-blue font-bold shrink-0 text-sm md:text-base border border-indigo-100">
+                {i}
               </div>
               <div className="flex-1 min-w-0">
-                <h5 className="font-medium text-gray-800 truncate">领事保护真实案例解析 #{i}</h5>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className="h-1 flex-1 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-macau-green w-1/3"></div>
+                <h5 className="font-medium text-gray-800 text-sm md:text-base truncate">领事保护真实案例解析 #{i}</h5>
+                <div className="flex items-center gap-3 mt-1.5">
+                  <div className="h-1.5 flex-1 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-brand-green w-1/3 rounded-full"></div>
                   </div>
-                  <span className="text-xs text-gray-400">12:00</span>
+                  <span className="text-[10px] text-gray-400 font-mono">12:00</span>
                 </div>
               </div>
-              <button className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600">
-                ▶
+              <button className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-red hover:border-brand-red transition-colors">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </button>
             </div>
           ))}
