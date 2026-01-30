@@ -19,7 +19,7 @@ const LanguageContext = React.createContext<LanguageContextType | undefined>(und
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language] = useState<LanguageCode>('zh-MO');
 
-  const setLanguage = (lang: LanguageCode) => {
+  const setLanguage = (_lang: LanguageCode) => {
     // No-op: Language is locked to zh-MO
   };
 
