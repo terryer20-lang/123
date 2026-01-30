@@ -18,18 +18,6 @@ import HotKnowledge from './pages/HotKnowledge';
 import Contact from './pages/Contact';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
-// Placeholder components for routes not fully detailed in requirement
-const PlaceholderPage = ({ titleKey }: { titleKey: string }) => {
-  const { t } = useLanguage();
-  return (
-    <div className="p-8 text-center text-gray-500 pt-24">
-      <h1 className="text-2xl font-bold mb-4">{t(titleKey)}</h1>
-      <p>{t('app.placeholder')}</p>
-      <div className="mt-8 text-6xl">{t('app.construction')}</div>
-    </div>
-  );
-};
-
 // Component to handle scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();

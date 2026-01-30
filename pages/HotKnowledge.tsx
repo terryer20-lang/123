@@ -47,7 +47,8 @@ interface MythProps {
   isCorrectTrue: boolean;
 }
 
-const MythBuster: React.FC<MythProps> = ({ id, question, answer, isCorrectTrue }) => {
+// FIX: Removed 'id' from destructuring as it was unused (TS6133)
+const MythBuster: React.FC<MythProps> = ({ question, answer, isCorrectTrue }) => {
   const { t } = useLanguage();
   const [selected, setSelected] = useState<'true' | 'false' | null>(null);
 
