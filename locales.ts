@@ -302,9 +302,9 @@ export const translations = {
       safety_questions: {
         "1": "您是否購買了涵蓋醫療和意外的旅行保險？",
         "2": "您是否了解目的地的治安狀況和常見犯罪手段？",
-        "3": "您是否登記了外交部'出國及海外中國公民自願登記'？",
+        "3": "您是否了解目的地的急救電話和使領館聯繫方式？",
         "4": "您是否備份了護照和簽證複印件？",
-        "5": "您是否了解當地的急救電話和使領館聯繫方式？"
+        "5": "您是否登記了外交部'出國及海外中國公民自願登記'？"
       }
     },
     prepare: {
@@ -358,6 +358,114 @@ export const translations = {
       link_tourism: "旅遊危機辦",
       download_btn: "立即下載",
       watch_btn: "點擊觀看"
+    },
+    graphics: {
+      hero_title: "圖解領保",
+      hero_subtitle: "複雜資訊，一張圖看懂",
+      filter_all: "全部",
+      filter_passport: "證件辦理",
+      filter_safety: "安全提醒",
+      filter_fraud: "防騙指南",
+      filter_emergency: "緊急求助",
+      item_1_title: "護照遺失全流程",
+      item_1_desc: "別慌！跟著這張圖做，3步搞定補辦。",
+      item_2_title: "海外電信詐騙圖鑑",
+      item_2_desc: "這 5 種電話千萬別接！",
+      item_3_title: "緊急求助電話壁紙",
+      item_3_desc: "長按保存，關鍵時刻能救命。",
+      item_4_title: "行李違禁品清單",
+      item_4_desc: "出發前必看，避免海關扣留。",
+      item_5_title: "領事官員能做什麼？",
+      item_5_desc: "權力邊界一圖清。",
+      item_6_title: "各國小費文化",
+      item_6_desc: "避免尷尬，這份攻略請收好。",
+      view_btn: "點擊查看",
+      save_btn: "保存"
+    },
+    notifications_page: {
+      hero_title: "往期推送",
+      hero_subtitle: "安全資訊・隨時回溯",
+      search_placeholder: "搜索關鍵詞...",
+      stats_total: "累計推送",
+      stats_alerts: "安全預警",
+      stats_tips: "實用貼士",
+      filter_all: "全部",
+      filter_alert: "預警",
+      filter_news: "新聞",
+      filter_activity: "活動",
+      empty_search: "未找到相關內容",
+      read_more: "閱讀全文",
+      heatmap_title: "發佈頻率",
+      
+      // Mock Data Titles/Snippets
+      item_1_title: "關於防範電信詐騙的緊急提醒",
+      item_1_desc: "近期針對留學生的新型電信詐騙頻發，請務必提高警惕，切勿輕信陌生來電。",
+      item_2_title: "更換特區護照新規定說明會回顧",
+      item_2_desc: "錯過了直播？點擊查看關於2025年特區護照更換的重點摘要及Q&A。",
+      item_3_title: "2026年度「領保之星」招募計劃啟動",
+      item_3_desc: "如果你熱愛傳播安全知識，歡迎加入我們，成為校園領保宣傳大使！",
+      item_4_title: "聖誕假期海外出行安全提示",
+      item_4_desc: "聖誕將至，歐洲多地人流密集，請注意保管財物並遠離示威區域。",
+      item_5_title: "駐外使領館假期辦公時間調整",
+      item_5_desc: "請留意春節期間各駐外使領館的證件辦理時間變動通知。",
+      item_6_title: "日本地震災區安全指引",
+      item_6_desc: "如身處受影響地區，請遵循當地政府指引，保持通訊暢通。"
+    },
+    hot_knowledge: {
+      hero_title: "領保燙知識",
+      hero_subtitle: "Freshly Served 🔥",
+      deck_title: "知識翻轉牌",
+      deck_desc: "點擊卡牌查看真相",
+      myth_title: "真相探測器",
+      myth_desc: "是真是假？測測你的直覺",
+      myth_true: "真相 (True)",
+      myth_false: "謠言 (Fake)",
+      tags_title: "熱搜關鍵詞",
+      
+      // Flashcards
+      card_1_q: "使館能幫我「撈人」嗎？",
+      card_1_a: "No！🙅 領事官員可以探視，但不能干預當地司法程序。",
+      card_2_q: "護照丟了能直接回國嗎？",
+      card_2_a: "不行！🛂 必須先到使領館補辦「旅行證」才能登機。",
+      card_3_q: "沒錢了使館能借錢嗎？",
+      card_3_a: "通常不能。🚫 僅在極特殊情況下提供臨時墊付（需簽署還款協議）。",
+      card_4_q: "能幫我找工作嗎？",
+      card_4_a: "不能。💼 領事保護不包括介紹工作或申辦居留。",
+      
+      // Myth Busters
+      myth_1_q: "「中國領事」APP 可以直接辦護照？",
+      myth_1_ans: "沒錯！📱 現已支持線上申請，無需親自到場排隊。",
+      myth_1_correct: "true",
+      
+      myth_2_q: "在國外犯法，躲進使館就沒事了？",
+      myth_2_ans: "大錯特錯！🚫 使館不是法外之地，不能庇護犯罪嫌疑人。",
+      myth_2_correct: "false",
+      
+      myth_3_q: "領事保護服務是完全免費的？",
+      myth_3_ans: "是的！✨ 領事官員的服務不收費，但辦證規費或第三方費用（如律師）需自理。",
+      myth_3_correct: "true"
+    },
+    contact: {
+      hero_title: "保持聯絡",
+      hero_subtitle: "Always Connected 🌐",
+      emergency_title: "緊急求助",
+      office_title: "辦公室資訊",
+      social_title: "關注我們",
+      feedback_title: "意見反饋",
+      dept_name: "澳門特別行政區政府\n身份證明局",
+      dept_address: "澳門南灣大馬路804號中華廣場1樓",
+      office_hours: "辦公時間：週一至週五 09:00 - 18:00",
+      phone_label: "電話",
+      email_label: "電郵",
+      fax_label: "傳真",
+      form_name: "您的稱呼",
+      form_email: "聯絡電郵",
+      form_message: "想對我們說...",
+      form_submit: "發送訊息",
+      success_message: "收到您的訊息！我們會盡快回覆。",
+      social_wechat: "微信公眾號",
+      social_facebook: "Facebook 專頁",
+      copy_success: "已複製"
     }
   }
 };

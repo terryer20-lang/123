@@ -11,7 +11,11 @@ import Help from './pages/Help';
 import Prepare from './pages/Prepare';
 import Events from './pages/Events';
 import Resources from './pages/Resources';
+import Graphics from './pages/Graphics';
+import PastNotifications from './pages/PastNotifications';
 import NotificationDetail from './pages/NotificationDetail';
+import HotKnowledge from './pages/HotKnowledge';
+import Contact from './pages/Contact';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
 // Placeholder components for routes not fully detailed in requirement
@@ -52,14 +56,12 @@ const AppRoutes = () => {
           <Route path="/prepare" element={<Prepare />} />
           <Route path="/events" element={<Events />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/graphics" element={<Graphics />} />
+          <Route path="/past-notifications" element={<PastNotifications />} />
+          <Route path="/hot-knowledge" element={<HotKnowledge />} />
+          <Route path="/contact" element={<Contact />} />
           
           <Route path="/notification/:id" element={<NotificationDetail />} />
-          
-          <Route path="/past-notifications" element={<PlaceholderPage titleKey="menu.past-notifications" />} />
-          <Route path="/graphics" element={<PlaceholderPage titleKey="menu.graphics" />} />
-          <Route path="/hot-knowledge" element={<PlaceholderPage titleKey="menu.hot-knowledge" />} />
-          
-          <Route path="/contact" element={<PlaceholderPage titleKey="menu.contact" />} />
           
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
