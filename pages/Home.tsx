@@ -16,16 +16,16 @@ const Home: React.FC = () => {
       {/* Hero Section - Full Dynamic Viewport Height */}
       <section className="relative h-[100dvh] w-full flex flex-col md:flex-row overflow-hidden bg-gray-900">
         
-        {/* Column 1: Consular Protection (Image Background) */}
+        {/* Column 1: Consular Protection (Red) */}
         <Link 
           to="/protection" 
-          className="group relative flex-1 bg-cover bg-center bg-no-repeat flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
-          style={{ 
-            animationDelay: '0ms',
-            backgroundImage: "url('/images/1.jpg')"
-          }}
+          className="group relative flex-1 bg-brand-red flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          style={{ animationDelay: '0ms' }}
         >
-           {/* Content removed as requested */}
+          <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🛡️</div>
+            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.protection')}</h2>
+          </div>
         </Link>
 
         {/* Column 2: Resident Rights (Blue) */}
