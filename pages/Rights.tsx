@@ -8,15 +8,17 @@ const Rights: React.FC = () => {
   return (
     <div className="pb-24 min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="px-5 pt-20 pb-10 bg-gradient-to-br from-brand-blue to-blue-800 text-white rounded-b-3xl shadow-xl mb-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 text-9xl opacity-10 transform translate-x-8 -translate-y-8">⚖️</div>
-        <div className="relative z-10">
-          <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-3 mt-4">
-            {t('rights.hero_title')}
-          </h1>
-          <p className="text-white/90 text-xs md:text-sm leading-relaxed max-w-xl">
-            {t('rights.hero_desc')}
-          </p>
+      <div className="px-6 pt-32 pb-10 bg-gradient-to-br from-brand-blue to-blue-800 text-white rounded-b-[2.5rem] shadow-xl mb-8 relative overflow-hidden">
+        <div className="relative z-10 flex items-center justify-between gap-4">
+          <div className="text-left flex-1">
+            <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-2">
+              {t('rights.hero_title')}
+            </h1>
+            <p className="text-white/90 text-xs md:text-sm leading-relaxed max-w-xl">
+              {t('rights.hero_desc')}
+            </p>
+          </div>
+          <div className="text-8xl opacity-20 transform rotate-12 shrink-0">⚖️</div>
         </div>
       </div>
 

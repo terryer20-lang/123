@@ -22,11 +22,17 @@ const Help: React.FC = () => {
     <div className="pb-24 min-h-screen bg-gray-50">
       
       {/* Hero: Emotional Support */}
-      <div className="bg-white px-6 pt-22 pb-12 rounded-b-3xl shadow-sm mb-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full blur-3xl -mr-10 -mt-10"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl -ml-10 -mb-10"></div>
-        <h1 className="text-3xl font-black text-gray-800 mb-3 relative z-10 pt-4">{t('help.hero_title')}</h1>
-        <p className="text-sm text-gray-500 leading-relaxed max-w-sm relative z-10">{t('help.hero_desc')}</p>
+      <div className="bg-gradient-to-br from-rose-500 to-red-600 text-white px-6 pt-32 pb-10 rounded-b-[2.5rem] shadow-xl mb-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -ml-10 -mb-10"></div>
+        
+        <div className="relative z-10 flex items-center justify-between gap-4">
+          <div className="text-left flex-1">
+            <h1 className="text-2xl md:text-3xl font-black mb-2">{t('help.hero_title')}</h1>
+            <p className="text-white/90 text-sm leading-relaxed max-w-sm">{t('help.hero_desc')}</p>
+          </div>
+          <div className="text-7xl shrink-0 animate-pulse">🆘</div>
+        </div>
       </div>
 
       <div className="px-4 space-y-8">

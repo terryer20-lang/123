@@ -25,7 +25,6 @@ const Home: React.FC = () => {
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🛡️</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.protection')}</h2>
-            <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.protection_sub')}</p>
           </div>
         </Link>
 
@@ -38,7 +37,6 @@ const Home: React.FC = () => {
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">⚖️</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.rights')}</h2>
-             <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.rights_sub')}</p>
           </div>
         </Link>
 
@@ -51,7 +49,6 @@ const Home: React.FC = () => {
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📅</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
-             <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.alerts_sub')}</p>
           </div>
         </Link>
 
@@ -64,7 +61,6 @@ const Home: React.FC = () => {
           <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📚</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
-             <p className="mt-1 md:mt-2 opacity-70 md:opacity-0 group-hover:opacity-80 transition-opacity text-xs md:text-sm font-en">{t('home.hero.emergency_sub')}</p>
           </div>
         </Link>
 

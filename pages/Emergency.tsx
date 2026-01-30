@@ -57,11 +57,14 @@ const Emergency: React.FC = () => {
     <div className="pb-24 min-h-screen bg-gray-900 text-white overflow-hidden">
       
       {/* Header Alert Style */}
-      <div className="bg-red-600 px-6 pt-24 pb-12 rounded-b-[3rem] shadow-2xl relative">
+      <div className="bg-gradient-to-br from-red-600 to-red-800 px-6 pt-32 pb-10 rounded-b-[2.5rem] shadow-2xl relative mb-8">
          <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-         <div className="relative z-10 text-center">
-            <h1 className="text-2xl font-black tracking-widest uppercase mb-1">{t('emergency.page_title')}</h1>
-            <p className="text-red-100 text-sm font-medium tracking-wide">{t('emergency.page_subtitle')}</p>
+         <div className="relative z-10 flex items-center justify-between gap-4">
+            <div className="text-left flex-1">
+              <h1 className="text-2xl font-black tracking-widest uppercase mb-1">{t('emergency.page_title')}</h1>
+              <p className="text-red-100 text-sm font-medium tracking-wide">{t('emergency.page_subtitle')}</p>
+            </div>
+            <div className="text-7xl shrink-0">🚨</div>
          </div>
       </div>
 

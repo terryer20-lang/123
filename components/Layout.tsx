@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { MENU_ITEMS } from '../constants';
-import { useLanguage, LANGUAGE_LABELS } from '../LanguageContext';
+import { useLanguage } from '../LanguageContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { language, cycleLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,15 +45,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* Right Actions */}
         <div className="flex items-center gap-2 md:gap-3 z-50 relative">
           
-          {/* Circular Language Button (Single Toggle) */}
-          <button 
-            onClick={cycleLanguage}
-            className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur border border-white/30 flex items-center justify-center text-white font-bold hover:bg-white/20 transition-colors active:scale-95 touch-manipulation text-xs md:text-sm"
-            aria-label="Switch Language"
-          >
-             {LANGUAGE_LABELS[language]}
-          </button>
-
           {/* Menu Button */}
           <button 
             onClick={toggleMenu}

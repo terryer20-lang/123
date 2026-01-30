@@ -9,6 +9,8 @@ import Protection from './pages/Protection';
 import Rights from './pages/Rights';
 import Help from './pages/Help';
 import Prepare from './pages/Prepare';
+import Events from './pages/Events';
+import Resources from './pages/Resources';
 import NotificationDetail from './pages/NotificationDetail';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
@@ -48,6 +50,8 @@ const AppRoutes = () => {
           <Route path="/rights" element={<Rights />} />
           <Route path="/help" element={<Help />} />
           <Route path="/prepare" element={<Prepare />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/resources" element={<Resources />} />
           
           <Route path="/notification/:id" element={<NotificationDetail />} />
           
@@ -55,8 +59,6 @@ const AppRoutes = () => {
           <Route path="/graphics" element={<PlaceholderPage titleKey="menu.graphics" />} />
           <Route path="/hot-knowledge" element={<PlaceholderPage titleKey="menu.hot-knowledge" />} />
           
-          <Route path="/events" element={<PlaceholderPage titleKey="menu.events" />} />
-          <Route path="/resources" element={<PlaceholderPage titleKey="menu.resources" />} />
           <Route path="/contact" element={<PlaceholderPage titleKey="menu.contact" />} />
           
           <Route path="*" element={<Navigate to="/" replace />} />
@@ -65,7 +67,7 @@ const AppRoutes = () => {
    )
 }
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <LanguageProvider>
       <HashRouter>

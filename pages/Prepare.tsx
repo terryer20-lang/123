@@ -24,7 +24,7 @@ const Prepare: React.FC = () => {
     <div className="pb-24 min-h-screen bg-gray-50">
       
       {/* Hero Section - Travel Theme */}
-      <div className="relative bg-brand-blue text-white rounded-b-3xl shadow-lg mb-6 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-blue-400 to-brand-blue text-white rounded-b-[2.5rem] shadow-lg overflow-hidden pb-20">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
            {/* Abstract Map Pattern */}
            <svg width="100%" height="100%">
@@ -35,40 +35,42 @@ const Prepare: React.FC = () => {
            </svg>
         </div>
         
-        {/* Animated Plane */}
-        <div className="absolute top-10 right-5 text-6xl animate-pulse opacity-20 transform rotate-12">✈️</div>
-
-        <div className="relative z-10 px-6 pt-24 pb-12">
-          <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-bold mb-3 border border-white/30">
-            {t('prepare.hero_title')}
+        <div className="relative z-10 px-6 pt-32 flex items-center justify-between gap-4">
+          <div className="text-left flex-1">
+            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-bold mb-3 border border-white/30">
+              {t('prepare.hero_title')}
+            </div>
+            <h1 className="text-2xl font-bold mb-2 leading-tight">
+               {t('prepare.hero_desc').split('。')[0]}
+            </h1>
+            <p className="text-sm opacity-80 max-w-sm">
+               {t('prepare.hero_desc').split('。')[1]}
+            </p>
           </div>
-          <h1 className="text-2xl font-bold mb-2 leading-tight">
-             {t('prepare.hero_desc').split('。')[0]}
-          </h1>
-          <p className="text-sm opacity-80 max-w-sm">
-             {t('prepare.hero_desc').split('。')[1]}
-          </p>
-        </div>
-
-        {/* Floating Progress Card */}
-        <div className="absolute -bottom-8 left-4 right-4 bg-white rounded-xl shadow-xl p-4 flex items-center gap-4">
-           <div className="relative w-16 h-16 shrink-0">
-              <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
-                <path className="text-gray-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="3" />
-                <path className="text-brand-green transition-all duration-1000 ease-out" strokeDasharray={`${progress}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="3" />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center font-bold text-brand-green">
-                {Math.round(progress)}%
-              </div>
-           </div>
-           <div>
-              <h3 className="font-bold text-gray-800 text-sm">{t('prepare.progress_title')}</h3>
-              <p className="text-xs text-gray-500 mt-1">{completedCount}/{checklist.length} Completed</p>
-           </div>
+          <div className="text-7xl shrink-0">✈️</div>
         </div>
       </div>
 
-      <div className="px-4 space-y-6 mt-12">
+      {/* Floating Progress Card - Extracted to avoid clipping */}
+      <div className="px-4 -mt-12 relative z-20">
+         <div className="bg-white rounded-xl shadow-xl p-4 flex items-center gap-4">
+            <div className="relative w-16 h-16 shrink-0">
+               <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                 <path className="text-gray-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="3" />
+                 <path className="text-brand-green transition-all duration-1000 ease-out" strokeDasharray={`${progress}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="3" />
+               </svg>
+               <div className="absolute inset-0 flex items-center justify-center font-bold text-brand-green">
+                 {Math.round(progress)}%
+               </div>
+            </div>
+            <div>
+               <h3 className="font-bold text-gray-800 text-sm">{t('prepare.progress_title')}</h3>
+               <p className="text-xs text-gray-500 mt-1">{completedCount}/{checklist.length} 完成度</p>
+            </div>
+         </div>
+      </div>
+
+      <div className="px-4 space-y-6 mt-8">
         
         {/* Checklist Section */}
         <div>
@@ -104,7 +106,6 @@ const Prepare: React.FC = () => {
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
            <h2 className="font-bold text-gray-800 mb-4 text-sm flex items-center justify-between">
              <span>🚦 {t('prepare.alerts_title')}</span>
-             <a href="http://cs.mfa.gov.cn" target="_blank" rel="noreferrer" className="text-brand-blue text-xs underline">Official Site &rarr;</a>
            </h2>
            <div className="grid grid-cols-3 gap-2">
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
@@ -165,7 +166,7 @@ const Prepare: React.FC = () => {
              rel="noreferrer"
              className="block w-full text-center bg-gray-200 text-gray-600 py-3 rounded-xl font-bold text-sm hover:bg-gray-300 transition-colors"
            >
-             Download "China Consular" APP
+             點擊下載”中國領事”APP
            </a>
         </div>
 

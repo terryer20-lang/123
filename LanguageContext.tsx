@@ -17,13 +17,14 @@ interface LanguageContextType {
 const LanguageContext = React.createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<LanguageCode>('zh-MO');
+  const [language] = useState<LanguageCode>('zh-MO');
+
+  const setLanguage = (lang: LanguageCode) => {
+    // No-op: Language is locked to zh-MO
+  };
 
   const cycleLanguage = () => {
-    const languages: LanguageCode[] = ['zh-MO', 'zh-CN', 'en', 'pt'];
-    const currentIndex = languages.indexOf(language);
-    const nextIndex = (currentIndex + 1) % languages.length;
-    setLanguage(languages[nextIndex]);
+    // No-op: Language is locked to zh-MO
   };
 
   const t = (key: string) => {
