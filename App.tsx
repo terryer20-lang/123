@@ -16,7 +16,7 @@ import PastNotifications from './pages/PastNotifications';
 import NotificationDetail from './pages/NotificationDetail';
 import HotKnowledge from './pages/HotKnowledge';
 import Contact from './pages/Contact';
-import { LanguageProvider, useLanguage } from './LanguageContext';
+import { LanguageProvider } from './LanguageContext';
 
 // Component to handle scroll to top on route change
 const ScrollToTop = () => {
