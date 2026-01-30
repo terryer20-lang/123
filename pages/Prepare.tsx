@@ -21,7 +21,7 @@ const Prepare: React.FC = () => {
   const progress = (completedCount / checklist.length) * 100;
 
   return (
-    <div className="pb-24 pt-16 min-h-screen bg-gray-50">
+    <div className="pb-24 min-h-screen bg-gray-50">
       
       {/* Hero Section - Travel Theme */}
       <div className="relative bg-brand-blue text-white rounded-b-3xl shadow-lg mb-6 overflow-hidden">
@@ -38,7 +38,7 @@ const Prepare: React.FC = () => {
         {/* Animated Plane */}
         <div className="absolute top-10 right-5 text-6xl animate-pulse opacity-20 transform rotate-12">✈️</div>
 
-        <div className="relative z-10 px-6 pt-6 pb-12">
+        <div className="relative z-10 px-6 pt-24 pb-12">
           <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-bold mb-3 border border-white/30">
             {t('prepare.hero_title')}
           </div>

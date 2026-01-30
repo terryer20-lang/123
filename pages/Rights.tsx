@@ -6,9 +6,9 @@ const Rights: React.FC = () => {
   const [activeIdentity, setActiveIdentity] = useState<'perm' | 'non_perm'>('perm');
 
   return (
-    <div className="pb-24 pt-16 min-h-screen bg-gray-50">
+    <div className="pb-24 min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="px-5 pt-6 pb-10 bg-gradient-to-br from-brand-blue to-blue-800 text-white rounded-b-3xl shadow-xl mb-6 relative overflow-hidden">
+      <div className="px-5 pt-20 pb-10 bg-gradient-to-br from-brand-blue to-blue-800 text-white rounded-b-3xl shadow-xl mb-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 text-9xl opacity-10 transform translate-x-8 -translate-y-8">⚖️</div>
         <div className="relative z-10">
           <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-3 mt-4">

@@ -19,13 +19,13 @@ const Help: React.FC = () => {
   ];
 
   return (
-    <div className="pb-24 pt-16 min-h-screen bg-gray-50">
+    <div className="pb-24 min-h-screen bg-gray-50">
       
       {/* Hero: Emotional Support */}
-      <div className="bg-white p-6 pb-12 rounded-b-3xl shadow-sm mb-6 relative overflow-hidden">
+      <div className="bg-white px-6 pt-22 pb-12 rounded-b-3xl shadow-sm mb-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full blur-3xl -mr-10 -mt-10"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl -ml-10 -mb-10"></div>
-        <h1 className="text-3xl font-black text-gray-800 mb-3 relative z-10">{t('help.hero_title')}</h1>
+        <h1 className="text-3xl font-black text-gray-800 mb-3 relative z-10 pt-4">{t('help.hero_title')}</h1>
         <p className="text-sm text-gray-500 leading-relaxed max-w-sm relative z-10">{t('help.hero_desc')}</p>
       </div>
 

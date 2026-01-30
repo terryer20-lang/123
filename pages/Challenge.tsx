@@ -46,7 +46,7 @@ const Challenge: React.FC = () => {
   const getOptionText = (id: number, idx: number) => t(`data.quiz.${id}.o.${idx}`);
 
   return (
-    <div className="p-4 space-y-4 pt-16 md:pt-20">
+    <div className="p-4 space-y-4 pt-20">
       <div className="bg-white p-4 rounded-xl shadow-sm border border-yellow-100 mb-4">
         <div className="flex justify-between items-center">
           <div className="text-gray-500 text-sm">{t('challenge.my_score')}</div>

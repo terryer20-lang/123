@@ -41,7 +41,7 @@ const SafetyIndex: React.FC = () => {
   const score = Object.values(answers).filter(Boolean).length * 20;
 
   return (
-    <div className="p-4 pb-24 pt-16 md:pt-20">
+    <div className="p-4 pb-24 pt-20">
       {!submitted ? (
         <div className="space-y-4">
           <div className="bg-blue-50 p-4 rounded-lg text-blue-800 text-sm">
