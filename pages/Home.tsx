@@ -25,11 +25,11 @@ const Home: React.FC = () => {
           {/* Background Image Layer - More robust than CSS background */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="images/1.jpg" 
+              src="/images/1.jpg" 
               alt="Consular Protection" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
-                console.error("Image failed to load: images/1.jpg. Please check if the file exists in public/images/ and matches the case (e.g. .jpg vs .JPG).");
+                console.error("Image failed to load: /images/1.jpg. Please check if the file exists in public/images/ and matches the case (e.g. .jpg vs .JPG).");
                 e.currentTarget.style.display = 'none';
               }}
             />
