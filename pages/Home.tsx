@@ -19,13 +19,21 @@ const Home: React.FC = () => {
         {/* Column 1: Consular Protection (Image Background) */}
         <Link 
           to="/protection" 
-          className="group relative flex-1 bg-cover bg-center bg-no-repeat flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          className="group relative flex-1 bg-gray-800 bg-cover bg-center bg-no-repeat flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
           style={{ 
             animationDelay: '0ms',
+            // Using absolute path '/images/1.jpg' which maps to public/images/1.jpg
             backgroundImage: "url('/images/1.jpg')"
           }}
         >
-           {/* Content removed as requested */}
+          {/* Dark Overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+
+          {/* Content */}
+          <div className="relative z-10 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
+            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🛡️</div>
+            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-md">{t('home.hero.protection')}</h2>
+          </div>
         </Link>
 
         {/* Column 2: Resident Rights (Blue) */}
