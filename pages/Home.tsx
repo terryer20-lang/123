@@ -29,8 +29,9 @@ const Home: React.FC = () => {
               alt="Consular Protection" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
-                console.error("Image failed to load: /images/1.jpg. Please check if the file exists in public/images/ and matches the case (e.g. .jpg vs .JPG).");
-                e.currentTarget.style.display = 'none';
+                // Fallback to a high-quality relevant image (Shield/Protection) if local file is missing/incorrect
+                e.currentTarget.onerror = null; // Prevent infinite loop
+                e.currentTarget.src = "https://images.unsplash.com/photo-1555881400-74d7acaacd81?auto=format&fit=crop&w=800&q=80";
               }}
             />
           </div>
