@@ -1,4 +1,4 @@
-# Macau Consular Protection Web App
+# 智保同行 (Zhi Bao Tong Xing)
 
 ## Deployment
 1. Install dependencies: `npm install` (if building locally)
@@ -12,3 +12,4 @@
 - 4 Language Support Structure
 - Clicky Analytics Integrated
 - Performance Optimized (WebP, Caching)
+- Consular Protection Resources & Emergency Tools
