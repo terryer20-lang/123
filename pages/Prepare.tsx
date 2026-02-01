@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../LanguageContext';
+import { COUNTRY_RISK_DATA } from '../constants';
 
 const Prepare: React.FC = () => {
   const { t } = useLanguage();
   const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
   const [showPopup, setShowPopup] = useState(false);
   const [hasShownPopup, setHasShownPopup] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResult, setSearchResult] = useState<typeof COUNTRY_RISK_DATA[0] | null>(null);
+  const [suggestions, setSuggestions] = useState<typeof COUNTRY_RISK_DATA>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const checklist = [
     { id: 1, icon: '🛂', title: t('prepare.check_1_t'), desc: t('prepare.check_1_d') },
@@ -28,6 +35,72 @@ const Prepare: React.FC = () => {
       setHasShownPopup(true);
     }
   }, [progress, hasShownPopup]);
+
+  // Handle outside click to close suggestions
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    setSearchResult(null); // Clear previous result when typing
+
+    if (query.trim().length > 0) {
+      const lowerQuery = query.toLowerCase();
+      const matches = COUNTRY_RISK_DATA.filter(
+        c => c.cn.includes(lowerQuery) || c.en.toLowerCase().includes(lowerQuery)
+      );
+      setSuggestions(matches);
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSelectCountry = (country: typeof COUNTRY_RISK_DATA[0]) => {
+    setSearchResult(country);
+    setSearchQuery(country.cn);
+    setShowSuggestions(false);
+  };
+
+  const getRiskLabel = (risk: string | null | undefined) => {
+    if (!risk) return 'N/A';
+    const lower = risk.toLowerCase();
+    if (lower === 'low') return '低';
+    if (lower === 'medium') return '中';
+    if (lower === 'high') return '高';
+    return risk;
+  };
+
+  const getRiskColor = (risk: string | null | undefined) => {
+    if (!risk) return 'bg-gray-100 text-gray-500';
+    switch (risk.toLowerCase()) {
+      case 'low': return 'bg-green-100 text-green-700 border-green-200';
+      case 'medium': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
+      case 'high': return 'bg-red-100 text-red-700 border-red-200';
+      default: return 'bg-gray-100 text-gray-500';
+    }
+  };
+
+  const getRiskInfo = (risk: string | null | undefined) => {
+    const lower = risk?.toLowerCase();
+    if (lower === 'low') return { color: 'green', labelKey: 'alert_1', tipKey: 'risk_tip_low' };
+    if (lower === 'medium') return { color: 'yellow', labelKey: 'alert_2', tipKey: 'risk_tip_medium' };
+    if (lower === 'high') return { color: 'red', labelKey: 'alert_3', tipKey: 'risk_tip_high' };
+    return { color: 'gray', labelKey: '', tipKey: '' };
+  };
+
+  const riskInfo = searchResult ? getRiskInfo(searchResult.risk) : null;
 
   return (
     <div className="pb-24 min-h-screen bg-gray-50">
@@ -108,24 +181,105 @@ const Prepare: React.FC = () => {
            </div>
         </div>
 
-        {/* Safety Alert Levels - Visualized */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-           <h2 className="font-bold text-gray-800 mb-4 text-sm flex items-center justify-between">
-             <span>🚦 {t('prepare.alerts_title')}</span>
+        {/* Destination Safety Search */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5" ref={searchContainerRef}>
+           <h2 className="font-bold text-gray-800 mb-4 text-sm flex items-center gap-2">
+             <span>🚦 {t('prepare.search_title')}</span>
            </h2>
-           <div className="grid grid-cols-3 gap-2">
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
-                 <div className="w-3 h-3 rounded-full bg-yellow-400 mb-2 animate-pulse"></div>
-                 <span className="text-[10px] font-bold text-yellow-700 leading-tight">{t('prepare.alert_1')}</span>
-              </div>
-              <div className="bg-orange-50 border border-orange-200 rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
-                 <div className="w-3 h-3 rounded-full bg-orange-500 mb-2 animate-pulse"></div>
-                 <span className="text-[10px] font-bold text-orange-700 leading-tight">{t('prepare.alert_2')}</span>
-              </div>
-              <div className="bg-red-50 border border-red-200 rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
-                 <div className="w-3 h-3 rounded-full bg-red-600 mb-2 animate-pulse"></div>
-                 <span className="text-[10px] font-bold text-red-800 leading-tight">{t('prepare.alert_3')}</span>
-              </div>
+           
+           <div className="relative mb-4">
+             <input
+                type="text"
+                value={searchQuery}
+                onChange={handleInputChange}
+                onFocus={() => { if(suggestions.length > 0) setShowSuggestions(true); }}
+                placeholder={t('prepare.search_placeholder')}
+                className="w-full bg-gray-50 border border-gray-200 rounded-lg py-3 pl-10 pr-4 text-sm focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all"
+             />
+             <span className="absolute left-3.5 top-3 text-gray-400">🔍</span>
+             
+             {/* Suggestions Dropdown */}
+             {showSuggestions && suggestions.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-100 max-h-60 overflow-y-auto z-30">
+                   {suggestions.map((country) => (
+                      <button
+                         key={country.code}
+                         onClick={() => handleSelectCountry(country)}
+                         className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-50 last:border-none transition-colors flex items-center justify-between"
+                      >
+                         <span className="text-sm text-gray-800 font-medium">
+                            {country.cn} <span className="text-gray-400 font-normal">({country.en})</span>
+                         </span>
+                         <img 
+                           src={`https://flagcdn.com/20x15/${country.code.toLowerCase()}.png`} 
+                           alt="flag" 
+                           className="shadow-sm rounded-sm"
+                         />
+                      </button>
+                   ))}
+                </div>
+             )}
+           </div>
+
+           {searchResult && riskInfo ? (
+             <div className="animate-fade-in bg-gray-50 rounded-xl p-4 border border-gray-200">
+               <div className="flex justify-between items-start mb-3 border-b border-gray-200 pb-2">
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">{searchResult.cn} <span className="text-sm font-normal text-gray-500">({searchResult.en})</span></h3>
+                    <img 
+                      src={`https://flagcdn.com/24x18/${searchResult.code.toLowerCase()}.png`} 
+                      alt="flag" 
+                      className="mt-1 shadow-sm rounded-sm"
+                    />
+                  </div>
+                  <div className={`px-3 py-1 rounded-full text-xs font-bold border ${getRiskColor(searchResult.risk)}`}>
+                     {t('prepare.risk_level')}: {getRiskLabel(searchResult.risk)}
+                  </div>
+               </div>
+               
+               <div className="grid grid-cols-2 gap-3 mb-4">
+                 <div className="bg-white p-2 rounded shadow-sm border border-gray-100">
+                    <div className="text-[10px] text-gray-500">{t('prepare.peace_index')}</div>
+                    <div className="font-mono font-bold text-gray-800">{searchResult.gpi ?? 'N/A'}</div>
+                 </div>
+                 <div className="bg-white p-2 rounded shadow-sm border border-gray-100">
+                    <div className="text-[10px] text-gray-500">{t('prepare.safety_index')}</div>
+                    <div className="font-mono font-bold text-gray-800">{searchResult.safeIndex ?? 'N/A'}</div>
+                 </div>
+                 <div className="bg-white p-2 rounded shadow-sm border border-gray-100">
+                    <div className="text-[10px] text-gray-500">{t('prepare.terrorism_index')}</div>
+                    <div className="font-mono font-bold text-gray-800">{searchResult.gti ?? 'N/A'}</div>
+                 </div>
+                 <div className="bg-white p-2 rounded shadow-sm border border-gray-100">
+                    <div className="text-[10px] text-gray-500">{t('prepare.us_news_rank')}</div>
+                    <div className="font-mono font-bold text-gray-800">#{searchResult.usRank ?? '-'}</div>
+                 </div>
+               </div>
+
+               {/* Traffic Light & Tips Block */}
+               <div className="bg-white rounded-lg p-3 border border-gray-100 flex flex-col items-center shadow-inner bg-opacity-50">
+                  <div className="flex gap-4 mb-2 bg-gray-800 p-2 rounded-full shadow-md">
+                     <div className={`w-4 h-4 rounded-full transition-all duration-300 ${riskInfo.color === 'green' ? 'bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.8)] scale-110' : 'bg-green-900/30'}`}></div>
+                     <div className={`w-4 h-4 rounded-full transition-all duration-300 ${riskInfo.color === 'yellow' ? 'bg-yellow-500 shadow-[0_0_12px_rgba(234,179,8,0.8)] scale-110' : 'bg-yellow-900/30'}`}></div>
+                     <div className={`w-4 h-4 rounded-full transition-all duration-300 ${riskInfo.color === 'red' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)] scale-110' : 'bg-red-900/30'}`}></div>
+                  </div>
+                  <div className={`font-bold text-sm mb-1 ${riskInfo.color === 'green' ? 'text-green-600' : riskInfo.color === 'yellow' ? 'text-yellow-600' : 'text-red-600'}`}>
+                     {t(`prepare.${riskInfo.labelKey}`)}
+                  </div>
+                  <p className="text-xs text-center text-gray-500 leading-relaxed px-2">
+                     {t(`prepare.${riskInfo.tipKey}`)}
+                  </p>
+               </div>
+
+             </div>
+           ) : searchQuery && !showSuggestions && (
+             <div className="text-center py-4 text-gray-400 text-xs">
+               {t('prepare.no_result')}
+             </div>
+           )}
+
+           <div className="mt-4 text-[10px] text-gray-400 text-center">
+              資料來源於 <a href="https://worldpopulationreview.com/country-rankings/safest-countries-in-the-world" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-blue transition-colors">Safest Countries in the World 2026</a>
            </div>
         </div>
 

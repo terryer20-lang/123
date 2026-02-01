@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MOCK_NOTIFICATIONS, KNOWLEDGE_CARDS } from '../constants';
+import { MOCK_NOTIFICATIONS, HOT_KNOWLEDGE_LIST } from '../constants';
 import { useLanguage } from '../LanguageContext';
 
 const Home: React.FC = () => {
@@ -10,6 +11,14 @@ const Home: React.FC = () => {
     const content = document.getElementById('home-content');
     content?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const KNOWLEDGE_IMAGES = [
+    "領保服務要收費嗎？親，國家不收費，但這些錢你要自己付！_主頁_按鈕背景圖.png",
+    "領保人員隨時待命？真的「說走就走」嗎？_主頁_按鈕背景圖.png",
+    "什麼是中國領事保護？國家給你的「海外護身符」！_主頁_按鈕背景圖.png",
+    "誰在保護我們？全球 260+使領館，有中國人的地方就有依靠！_主頁_按鈕背景圖.png",
+    "領保到底保什麼？人身、財產、人道待遇，一樣都不少！_主頁_按鈕背景圖.png"
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-900">
@@ -25,7 +34,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/1.jpg" 
+              src="/images/領事保護專區_主頁_按鈕背景圖.png" 
               alt="Consular Protection" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -50,7 +59,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
              <img 
-              src="/images/2.jpg" 
+              src="/images/居民身份權利專區_主頁_按鈕背景圖.png" 
               alt="Resident Rights" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -75,7 +84,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
              <img 
-              src="/images/3.jpg" 
+              src="/images/活動日程專區_主頁_按鈕背景圖.png" 
               alt="Events" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -100,7 +109,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
              <img 
-              src="/images/4.jpg" 
+              src="/images/資源專區_主頁_按鈕背景圖.png" 
               alt="Resources" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -163,23 +172,30 @@ const Home: React.FC = () => {
           </div>
           
           <div className="overflow-x-auto flex gap-4 px-5 pb-4 no-scrollbar snap-x snap-mandatory touch-pan-x">
-            {KNOWLEDGE_CARDS.map((card) => (
-              <Link key={card.id} to={card.link} className="flex-none w-[80vw] md:w-96 snap-center group">
+            {HOT_KNOWLEDGE_LIST.slice(0, 5).map((item, index) => (
+              <Link key={item.id} to={`/knowledge/${item.id}`} className="flex-none w-[80vw] md:w-96 snap-center group">
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-40 md:h-48 overflow-hidden">
+                  <div className="relative h-40 md:h-48 overflow-hidden bg-gray-900">
                     <img 
-                      src={card.image} 
-                      alt=""
+                      src={`/images/${KNOWLEDGE_IMAGES[index]}`}
+                      alt={t(`hot_knowledge.${item.titleKey}`)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <h3 className="absolute bottom-3 left-4 text-white text-base md:text-lg font-bold">
-                      {t(`data.knowledge.${card.id}`)}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <h3 className="absolute bottom-3 left-4 right-4 text-white text-base md:text-lg font-bold line-clamp-2 leading-tight drop-shadow-sm">
+                      {t(`hot_knowledge.${item.titleKey}`)}
                     </h3>
                   </div>
                   <div className="px-4 py-3 flex justify-between items-center bg-gray-50">
-                    <span className="text-[10px] md:text-xs text-gray-500 font-pt uppercase tracking-wider">{t('home.knowledge.label')}</span>
-                    <span className="text-xs md:text-sm font-bold text-brand-blue flex items-center gap-1">
+                    <div className="flex gap-1 overflow-x-auto no-scrollbar max-w-[70%]">
+                      {item.tags.map((tag, idx) => (
+                        <span key={idx} className="text-[10px] md:text-xs text-gray-500 font-bold bg-gray-200 px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap flex-shrink-0">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-xs md:text-sm font-bold text-brand-blue flex items-center gap-1 shrink-0 ml-2">
                       {t('home.knowledge.read')} <span className="text-base">→</span>
                     </span>
                   </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
 
@@ -64,7 +65,18 @@ const Challenge: React.FC = () => {
             ))}
           </div>
           
-          <div className="p-4 bg-gray-50 text-center text-xs text-gray-400">
+          <div className="p-4 border-t border-gray-50">
+             <a 
+               href="https://docs.google.com/spreadsheets/d/1DWOBJv_kEMX2ITArOUAEXNMinZ3Ec6mW4Qh1nTHDaKk/edit?usp=sharing"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="block w-full text-center py-2.5 rounded-xl border border-yellow-200 text-yellow-700 font-bold text-sm hover:bg-yellow-50 transition-colors flex items-center justify-center gap-2"
+             >
+               📄 {t('challenge.view_score_sheet')}
+             </a>
+          </div>
+
+          <div className="p-4 bg-gray-50 text-center text-xs text-gray-400 border-t border-gray-100">
              排行榜每週一 00:00 更新
           </div>
         </div>
@@ -96,7 +108,18 @@ const Challenge: React.FC = () => {
             ))}
           </div>
 
-          <div className="p-4 bg-gray-50 text-center text-xs text-gray-400">
+          <div className="p-4 border-t border-gray-50">
+             <a 
+               href="https://docs.google.com/spreadsheets/d/1LtmfQCz4PS7gULKMhytSFMcYaT_6pqPzfuGWOs-7RWA/edit?usp=sharing"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="block w-full text-center py-2.5 rounded-xl border border-blue-200 text-blue-700 font-bold text-sm hover:bg-blue-50 transition-colors flex items-center justify-center gap-2"
+             >
+               📄 {t('challenge.view_score_sheet')}
+             </a>
+          </div>
+
+          <div className="p-4 bg-gray-50 text-center text-xs text-gray-400 border-t border-gray-100">
              排行榜每週一 00:00 更新
           </div>
         </div>

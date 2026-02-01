@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
 
@@ -102,7 +103,6 @@ const Help: React.FC = () => {
                              📱 {t('help.steps_passport.2.t')}
                           </h4>
                           <div className="bg-blue-50 p-3 rounded-lg mt-2 border border-blue-100">
-                             <p className="text-xs text-blue-800 font-medium">Macau One Account</p>
                              <p className="text-[10px] text-blue-600 mt-1">{t('help.steps_passport.2.d')}</p>
                           </div>
                        </div>
@@ -170,7 +170,9 @@ const Help: React.FC = () => {
            <h2 className="font-bold text-gray-800 text-center">{t('help.powers_title')}</h2>
            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                 <h3 className="font-bold text-green-700 mb-3">{t('help.can_title')}</h3>
+                 <h3 className="text-green-700 mb-3 font-medium">
+                   ✅ <span className="font-black text-lg">可以</span>為你做什麼？
+                 </h3>
                  <ul className="space-y-2">
                    {[0, 1, 2].map(i => (
                      <li key={i} className="text-xs text-green-800 flex items-start gap-2">
@@ -181,7 +183,9 @@ const Help: React.FC = () => {
                  </ul>
               </div>
               <div className="bg-red-50 p-4 rounded-xl border border-red-100">
-                 <h3 className="font-bold text-red-700 mb-3">{t('help.cannot_title')}</h3>
+                 <h3 className="text-red-700 mb-3 font-medium">
+                   ❌ <span className="font-black text-lg">不可以</span>做什麼？
+                 </h3>
                  <ul className="space-y-2">
                    {[0, 1, 2, 3].map(i => (
                      <li key={i} className="text-xs text-red-800 flex items-start gap-2">

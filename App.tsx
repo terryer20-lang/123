@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -15,6 +16,7 @@ import Graphics from './pages/Graphics';
 import PastNotifications from './pages/PastNotifications';
 import NotificationDetail from './pages/NotificationDetail';
 import HotKnowledge from './pages/HotKnowledge';
+import KnowledgeDetail from './pages/KnowledgeDetail';
 import Contact from './pages/Contact';
 import { LanguageProvider } from './LanguageContext';
 
@@ -50,6 +52,7 @@ const AppRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           
           <Route path="/notification/:id" element={<NotificationDetail />} />
+          <Route path="/knowledge/:id" element={<KnowledgeDetail />} />
           
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

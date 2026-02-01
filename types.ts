@@ -1,3 +1,4 @@
+
 export interface MenuItem {
   id: string;
   icon: string;
@@ -30,6 +31,13 @@ export interface KnowledgeCard {
   image: string;
   link: string;
   // title moved to locales
+}
+
+export interface KnowledgeItem {
+  id: string;
+  titleKey: string;
+  contentKey: string;
+  tags: string[];
 }
 
 export enum SafetyRating {
