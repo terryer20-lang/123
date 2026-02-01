@@ -18,17 +18,23 @@ const Protection: React.FC = () => {
   return (
     <div className="pb-24 min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="px-6 pt-32 pb-10 bg-gradient-to-br from-brand-red to-red-700 text-white rounded-b-[2.5rem] shadow-xl mb-8 relative overflow-hidden">
-        <div className="relative z-10 flex items-center justify-between gap-4">
-          <div className="text-left flex-1">
-            <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-2">
-              {t('protection.hero_title')}
-            </h1>
-            <p className="text-white/90 text-sm leading-relaxed max-w-lg">
-              {t('protection.hero_desc')}
-            </p>
-          </div>
-          <div className="text-8xl opacity-20 transform -rotate-12 shrink-0">🛡️</div>
+      <div className="px-6 pt-32 pb-10 bg-gray-900 text-white rounded-b-[2.5rem] shadow-xl mb-8 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/1.jpg" 
+            alt="Background" 
+            className="w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div className="relative z-10">
+          <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-2">
+            {t('protection.hero_title')}
+          </h1>
+          <p className="text-white/90 text-sm leading-relaxed max-w-lg">
+            {t('protection.hero_desc')}
+          </p>
         </div>
       </div>
 

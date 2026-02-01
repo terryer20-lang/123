@@ -117,8 +117,15 @@ const Events: React.FC = () => {
       
       {/* Immersive Hero Section */}
       <div className="relative pt-24 pb-8 px-6 overflow-hidden bg-gray-900 text-white rounded-b-[3rem] shadow-2xl">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-blue rounded-full filter blur-[80px] opacity-30 -mr-20 -mt-20"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-red rounded-full filter blur-[80px] opacity-30 -ml-20 -mb-20"></div>
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/3.jpg" 
+            alt="Background" 
+            className="w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
         
         <div className="relative z-10 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-black italic mb-2 leading-tight drop-shadow-lg">

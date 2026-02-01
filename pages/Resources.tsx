@@ -19,8 +19,15 @@ const Resources: React.FC = () => {
       
       {/* Hero: Digital Backpack Theme */}
       <div className="relative pt-32 pb-12 px-6 bg-gray-900 overflow-hidden rounded-b-[3rem] shadow-2xl">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-green/20 rounded-full blur-[80px] -mr-20 -mt-20 animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-blue/20 rounded-full blur-[80px] -ml-20 -mb-20"></div>
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/4.jpg" 
+            alt="Background" 
+            className="w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
         
         <div className="relative z-10 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">
