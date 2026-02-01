@@ -12,124 +12,55 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Full Dynamic Viewport Height */}
-      <section className="relative h-[100dvh] w-full flex flex-col md:flex-row overflow-hidden bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-gray-900">
+      {/* Hero Section - Flexible Height, fills at least viewport */}
+      <section className="relative min-h-[100dvh] w-full flex flex-col md:flex-row">
         
-        {/* Column 1: Consular Protection (Red Theme / 1.jpg) */}
+        {/* Column 1: Consular Protection */}
         <Link 
           to="/protection" 
-          className="group relative flex-1 bg-gray-800 flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
+          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 border-b md:border-b-0 md:border-r border-gray-800 animate-slide-up"
           style={{ animationDelay: '0ms' }}
         >
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/images/1.jpg" 
-              alt="Consular Protection" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                // Fallback to Unsplash if local image missing
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = "https://images.unsplash.com/photo-1555881400-74d7acaacd81?auto=format&fit=crop&w=800&q=80";
-              }}
-            />
-          </div>
-
-          {/* Dark Overlay for text readability */}
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 z-10"></div>
-
-          {/* Content */}
-          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-md">{t('home.hero.protection')}</h2>
+          <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.protection')}</h2>
           </div>
         </Link>
 
-        {/* Column 2: Resident Rights (Blue Theme / 2.jpg) */}
+        {/* Column 2: Resident Rights */}
         <Link 
           to="/rights" 
-          className="group relative flex-1 bg-brand-blue flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
+          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 border-b md:border-b-0 md:border-r border-gray-800 animate-slide-up"
           style={{ animationDelay: '100ms' }}
         >
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0">
-             <img 
-              src="/images/2.jpg" 
-              alt="Resident Rights" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80"; // Law/Scale image
-              }}
-            />
-          </div>
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/30 transition-colors duration-300 z-10"></div>
-
-          {/* Content */}
-          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.rights')}</h2>
+          <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.rights')}</h2>
           </div>
         </Link>
 
-        {/* Column 3: Events (Orange Theme / 3.jpg) */}
+        {/* Column 3: Events */}
         <Link 
           to="/events" 
-          className="group relative flex-1 bg-brand-orange flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
+          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 border-b md:border-b-0 md:border-r border-gray-800 animate-slide-up"
           style={{ animationDelay: '200ms' }}
         >
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0">
-             <img 
-              src="/images/3.jpg" 
-              alt="Events" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"; // Calendar/Schedule image
-              }}
-            />
-          </div>
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-orange-900/40 group-hover:bg-orange-900/30 transition-colors duration-300 z-10"></div>
-
-          {/* Content */}
-          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
+          <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.alerts')}</h2>
           </div>
         </Link>
 
-        {/* Column 4: Resources (Green Theme / 4.jpg) */}
+        {/* Column 4: Resources */}
         <Link 
           to="/resources" 
-          className="group relative flex-1 bg-brand-green flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
+          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 animate-slide-up"
           style={{ animationDelay: '300ms' }}
         >
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0">
-             <img 
-              src="/images/4.jpg" 
-              alt="Resources" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80"; // Books/Library image
-              }}
-            />
-          </div>
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-green-900/40 group-hover:bg-green-900/30 transition-colors duration-300 z-10"></div>
-
-          {/* Content */}
-          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
+          <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.emergency')}</h2>
           </div>
         </Link>
 
-        {/* Scroll Indicator - Moved to Middle */}
+        {/* Scroll Indicator */}
         <div className="absolute top-1/2 left-0 right-0 flex justify-center pointer-events-none z-20 opacity-0 animate-fade-in -translate-y-1/2" style={{ animationDelay: '1000ms' }}>
           <button 
             onClick={(e) => { e.preventDefault(); scrollToContent(); }}
@@ -143,8 +74,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Content Section */}
-      <div id="home-content" className="bg-white relative z-10 min-h-screen rounded-t-3xl -mt-4 shadow-[0_-5px_25px_rgba(0,0,0,0.1)]">
+      {/* Content Section - Immediately follows the Hero section */}
+      <div id="home-content" className="bg-white relative z-10 w-full mt-0 shadow-[0_-5px_25px_rgba(0,0,0,0.1)]">
         
         {/* Quick Access Buttons */}
         <section className="px-4 py-8 pb-4">
