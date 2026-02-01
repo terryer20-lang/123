@@ -254,6 +254,7 @@ export const translations = {
       points_earned: "本次獲得積分",
       play_again: "再來一次",
       leaderboard_title: "總排行榜",
+      weekly_leaderboard_title: "本週排行榜",
       score_suffix: "分"
     },
     safety: {

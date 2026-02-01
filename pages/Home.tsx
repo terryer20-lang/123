@@ -41,9 +41,7 @@ const Home: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🛡️</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-md">{t('home.hero.protection')}</h2>
-            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.protection_sub')}</p>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-md">{t('home.hero.protection')}</h2>
           </div>
         </Link>
 
@@ -71,9 +69,7 @@ const Home: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">⚖️</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.rights')}</h2>
-            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.rights_sub')}</p>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.rights')}</h2>
           </div>
         </Link>
 
@@ -101,9 +97,7 @@ const Home: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📅</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
-            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.alerts_sub')}</p>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
           </div>
         </Link>
 
@@ -131,9 +125,7 @@ const Home: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
-            <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📚</div>
-            <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
-            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.emergency_sub')}</p>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
           </div>
         </Link>
 
