@@ -19,44 +19,100 @@ const Home: React.FC = () => {
         {/* Column 1: Consular Protection */}
         <Link 
           to="/protection" 
-          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 border-b md:border-b-0 md:border-r border-gray-800 animate-slide-up"
+          className="group relative flex-1 bg-black flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '0ms' }}
         >
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/images/1.jpg" 
+              alt="Consular Protection" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 z-10"></div>
+
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.protection')}</h2>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-md">{t('home.hero.protection')}</h2>
           </div>
         </Link>
 
         {/* Column 2: Resident Rights */}
         <Link 
           to="/rights" 
-          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 border-b md:border-b-0 md:border-r border-gray-800 animate-slide-up"
+          className="group relative flex-1 bg-black flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '100ms' }}
         >
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+             <img 
+              src="/images/2.jpg" 
+              alt="Resident Rights" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 z-10"></div>
+
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.rights')}</h2>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-md">{t('home.hero.rights')}</h2>
           </div>
         </Link>
 
         {/* Column 3: Events */}
         <Link 
           to="/events" 
-          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 border-b md:border-b-0 md:border-r border-gray-800 animate-slide-up"
+          className="group relative flex-1 bg-black flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '200ms' }}
         >
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+             <img 
+              src="/images/3.jpg" 
+              alt="Events" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 z-10"></div>
+
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.alerts')}</h2>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-md">{t('home.hero.alerts')}</h2>
           </div>
         </Link>
 
         {/* Column 4: Resources */}
         <Link 
           to="/resources" 
-          className="group relative flex-1 bg-gray-900 flex items-center justify-center transition-all duration-300 py-10 md:py-0 animate-slide-up"
+          className="group relative flex-1 bg-black flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '300ms' }}
         >
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+             <img 
+              src="/images/4.jpg" 
+              alt="Resources" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 z-10"></div>
+
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-wide">{t('home.hero.emergency')}</h2>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-md">{t('home.hero.emergency')}</h2>
           </div>
         </Link>
 
