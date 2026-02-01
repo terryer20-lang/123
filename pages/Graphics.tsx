@@ -9,7 +9,7 @@ interface GraphicItem {
   titleKey: string;
   descKey: string;
   type: 'flow' | 'chat' | 'wallpaper' | 'list' | 'info' | 'card';
-  height: string; // Tailwind class for simulated height diversity
+  height: string;
   color: string;
 }
 

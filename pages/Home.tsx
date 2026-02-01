@@ -16,21 +16,21 @@ const Home: React.FC = () => {
       {/* Hero Section - Full Dynamic Viewport Height */}
       <section className="relative h-[100dvh] w-full flex flex-col md:flex-row overflow-hidden bg-gray-900">
         
-        {/* Column 1: Consular Protection (Image Background) */}
+        {/* Column 1: Consular Protection (Red Theme / 1.jpg) */}
         <Link 
           to="/protection" 
           className="group relative flex-1 bg-gray-800 flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
           style={{ animationDelay: '0ms' }}
         >
-          {/* Background Image Layer - More robust than CSS background */}
+          {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
             <img 
               src="/images/1.jpg" 
               alt="Consular Protection" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
-                // Fallback to a high-quality relevant image (Shield/Protection) if local file is missing/incorrect
-                e.currentTarget.onerror = null; // Prevent infinite loop
+                // Fallback to Unsplash if local image missing
+                e.currentTarget.onerror = null;
                 e.currentTarget.src = "https://images.unsplash.com/photo-1555881400-74d7acaacd81?auto=format&fit=crop&w=800&q=80";
               }}
             />
@@ -43,42 +43,97 @@ const Home: React.FC = () => {
           <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">🛡️</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-md">{t('home.hero.protection')}</h2>
+            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.protection_sub')}</p>
           </div>
         </Link>
 
-        {/* Column 2: Resident Rights (Blue) */}
+        {/* Column 2: Resident Rights (Blue Theme / 2.jpg) */}
         <Link 
           to="/rights" 
-          className="group relative flex-1 bg-brand-blue flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          className="group relative flex-1 bg-brand-blue flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
           style={{ animationDelay: '100ms' }}
         >
-          <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+             <img 
+              src="/images/2.jpg" 
+              alt="Resident Rights" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80"; // Law/Scale image
+              }}
+            />
+          </div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/30 transition-colors duration-300 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">⚖️</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.rights')}</h2>
+            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.rights_sub')}</p>
           </div>
         </Link>
 
-        {/* Column 3: Events (Orange) - Was Travel Alerts */}
+        {/* Column 3: Events (Orange Theme / 3.jpg) */}
         <Link 
           to="/events" 
-          className="group relative flex-1 bg-brand-orange flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          className="group relative flex-1 bg-brand-orange flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
           style={{ animationDelay: '200ms' }}
         >
-          <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+             <img 
+              src="/images/3.jpg" 
+              alt="Events" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"; // Calendar/Schedule image
+              }}
+            />
+          </div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-orange-900/40 group-hover:bg-orange-900/30 transition-colors duration-300 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📅</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.alerts')}</h2>
+            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.alerts_sub')}</p>
           </div>
         </Link>
 
-        {/* Column 4: Resources (Green) - Was Emergency */}
+        {/* Column 4: Resources (Green Theme / 4.jpg) */}
         <Link 
           to="/resources" 
-          className="group relative flex-1 bg-brand-green flex items-center justify-center hover:brightness-110 transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up"
+          className="group relative flex-1 bg-brand-green flex items-center justify-center transition-all duration-300 py-4 md:py-0 opacity-0 animate-slide-up overflow-hidden"
           style={{ animationDelay: '300ms' }}
         >
-          <div className="text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+             <img 
+              src="/images/4.jpg" 
+              alt="Resources" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80"; // Books/Library image
+              }}
+            />
+          </div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-green-900/40 group-hover:bg-green-900/30 transition-colors duration-300 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 text-center text-white p-2 md:p-4 flex flex-col items-center justify-center h-full">
             <div className="text-4xl md:text-6xl mb-2 md:mb-4 opacity-90 group-hover:scale-110 transition-transform duration-300 drop-shadow-md">📚</div>
             <h2 className="text-xl md:text-3xl font-bold tracking-wide drop-shadow-sm">{t('home.hero.emergency')}</h2>
+            <p className="text-xs md:text-sm uppercase tracking-widest opacity-80 mt-1">{t('home.hero.emergency_sub')}</p>
           </div>
         </Link>
 

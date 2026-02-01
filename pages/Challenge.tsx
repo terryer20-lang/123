@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../LanguageContext';
 
 const Challenge: React.FC = () => {
-  const [totalPoints, setTotalPoints] = useState(0);
   const { t } = useLanguage();
-
-  useEffect(() => {
-    const savedPoints = localStorage.getItem('macau_consular_points');
-    if (savedPoints) {
-      setTotalPoints(parseInt(savedPoints, 10));
-    } else {
-      // Mock initial score if empty for display purposes
-      setTotalPoints(150);
-    }
-  }, []);
 
   const mockLeaderboard = [
     { rank: 1, user: "陳**", score: 2850 },
@@ -40,16 +29,7 @@ const Challenge: React.FC = () => {
       </div>
 
       <div className="px-4 space-y-4">
-        {/* User Score Card */}
-        <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-100 mb-6 flex items-center justify-between">
-          <div>
-             <div className="text-gray-500 text-sm font-medium">{t('challenge.my_score')}</div>
-             <div className="text-xs text-gray-400 mt-1">本週排名: 124</div>
-          </div>
-          <div className="text-3xl font-bold text-yellow-600">{totalPoints}</div>
-        </div>
-        
-        {/* Leaderboard */}
+        {/* Leaderboard Only */}
         <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-yellow-50 to-white p-4 border-b border-gray-100">
              <h3 className="font-bold text-gray-800 flex items-center gap-2 text-lg">

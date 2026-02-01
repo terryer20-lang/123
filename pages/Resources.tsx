@@ -4,6 +4,16 @@ import { useLanguage } from '../LanguageContext';
 const Resources: React.FC = () => {
   const { t } = useLanguage();
 
+  const links = [
+    { label: t('resources.link_1'), url: "https://www.fmprc.gov.cn/web/", icon: "🇨🇳" },
+    { label: t('resources.link_2'), url: "https://portaldascomunidades.mne.gov.pt/pt/", icon: "🇵🇹" },
+    { label: t('resources.link_3'), url: "https://cs.mfa.gov.cn/", icon: "🌏" },
+    { label: t('resources.link_4'), url: "https://mo.ocmfa.gov.cn/chn/", icon: "🏢" },
+    { label: t('resources.link_5'), url: "https://www.gov.mo/zh-hant/", icon: "🇲🇴" },
+    { label: t('resources.link_6'), url: "https://www.dsi.gov.mo/index_cn.jsp", icon: "🆔" },
+    { label: t('resources.link_7'), url: "https://www.elctp.k12.edu.mo/elctp/", icon: "🏫" },
+  ];
+
   return (
     <div className="pb-24 min-h-screen bg-gray-50 font-sans">
       
@@ -67,59 +77,27 @@ const Resources: React.FC = () => {
           </div>
         </section>
 
-        {/* Section 2: Visual Learning - Horizontal Scroll */}
-        <section>
-          <div className="flex justify-between items-center mb-4 px-1">
-             <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-               <span>🖼️</span> {t('resources.section_visuals')}
-             </h2>
-             <span className="text-xs text-gray-400">&rarr;</span>
-          </div>
-          
-          <div className="flex overflow-x-auto gap-4 pb-4 no-scrollbar snap-x">
-             {[1, 2, 3].map((i) => (
-               <div key={i} className="snap-center shrink-0 w-64 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-lg transition-all">
-                  <div className={`h-32 w-full ${i === 1 ? 'bg-orange-100' : i === 2 ? 'bg-red-100' : 'bg-blue-100'} relative flex items-center justify-center`}>
-                     <span className="text-4xl group-hover:scale-110 transition-transform duration-500">
-                        {i === 1 ? '🛂' : i === 2 ? '📵' : '📞'}
-                     </span>
-                     {/* Glass Overlay Tag */}
-                     <div className="absolute bottom-2 right-2 bg-white/30 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-bold text-gray-700">
-                        #INFOGRAPHIC
-                     </div>
-                  </div>
-                  <div className="p-4">
-                     <h3 className="font-bold text-gray-800 text-sm">{t(`resources.visual_${i}`)}</h3>
-                     <div className="mt-3 flex items-center gap-1 text-[10px] text-brand-blue font-bold uppercase tracking-wider">
-                        View Post <span>&rarr;</span>
-                     </div>
-                  </div>
-               </div>
-             ))}
-          </div>
-        </section>
+        {/* Removed Section: Visual Learning (圖解領保) as requested */}
 
         {/* Section 4: External Portals - Pill Buttons */}
         <section className="pb-8">
            <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2 px-1">
              <span>🔗</span> {t('resources.section_links')}
            </h2>
-           <div className="flex flex-wrap gap-2">
-              <a href="https://cs.mfa.gov.cn" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white px-4 py-3 rounded-full border border-gray-200 shadow-sm hover:border-brand-blue hover:text-brand-blue transition-colors">
-                 <span className="text-lg">🇨🇳</span>
-                 <span className="text-xs font-bold">{t('resources.link_mfa')}</span>
-                 <span className="text-gray-300 text-xs">↗</span>
-              </a>
-              <a href="https://www.dsi.gov.mo" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white px-4 py-3 rounded-full border border-gray-200 shadow-sm hover:border-brand-green hover:text-brand-green transition-colors">
-                 <span className="text-lg">🆔</span>
-                 <span className="text-xs font-bold">{t('resources.link_macau')}</span>
-                 <span className="text-gray-300 text-xs">↗</span>
-              </a>
-              <a href="https://www.macaotourism.gov.mo" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white px-4 py-3 rounded-full border border-gray-200 shadow-sm hover:border-orange-500 hover:text-orange-500 transition-colors">
-                 <span className="text-lg">🏖️</span>
-                 <span className="text-xs font-bold">{t('resources.link_tourism')}</span>
-                 <span className="text-gray-300 text-xs">↗</span>
-              </a>
+           <div className="flex flex-col gap-3">
+              {links.map((link, idx) => (
+                <a 
+                  key={idx}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-3 bg-white px-4 py-4 rounded-xl border border-gray-200 shadow-sm hover:border-brand-blue hover:text-brand-blue transition-colors"
+                >
+                   <span className="text-xl shrink-0">{link.icon}</span>
+                   <span className="text-sm font-bold flex-1">{link.label}</span>
+                   <span className="text-gray-300 text-xs">↗</span>
+                </a>
+              ))}
            </div>
         </section>
 

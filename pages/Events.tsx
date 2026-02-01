@@ -10,7 +10,7 @@ interface ConsularEvent {
   date: {
     month: string;
     day: string;
-    full: string; // Added full string for list view
+    full: string;
   };
   time: string;
   location: string;
@@ -31,44 +31,44 @@ const Events: React.FC = () => {
   const mockEvents: ConsularEvent[] = [
     {
       id: 1,
-      title: "Consular Protection Campus Tour @UM",
+      title: "校園領事保護巡迴展 @澳門大學",
       category: "popup",
       date: { month: "MAR", day: "15", full: "2026-03-15" },
       time: "14:00 - 17:00",
-      location: "University of Macau, E4",
+      location: "澳門大學 E4",
       status: "hot",
       color: "bg-pink-100 text-pink-700 border-pink-200",
       categoryLabelKey: "tab_popup"
     },
     {
       id: 2,
-      title: "Anti-Fraud Online Webinar",
+      title: "防範電信詐騙線上研討會",
       category: "online",
       date: { month: "MAR", day: "22", full: "2026-03-22" },
       time: "20:00 - 21:30",
-      location: "Zoom Live",
+      location: "Zoom 直播",
       status: "new",
       color: "bg-blue-100 text-blue-700 border-blue-200",
       categoryLabelKey: "tab_online"
     },
     {
       id: 3,
-      title: "Summer Exchange Safety Briefing",
+      title: "暑期交流安全說明會",
       category: "seminar",
       date: { month: "APR", day: "05", full: "2026-04-05" },
       time: "10:30 - 12:00",
-      location: "Macau Science Center",
+      location: "澳門科學館",
       status: "full",
       color: "bg-purple-100 text-purple-700 border-purple-200",
       categoryLabelKey: "tab_seminar"
     },
     {
       id: 4,
-      title: "Travel Docs Q&A Pop-up",
+      title: "旅行證件問答工作坊",
       category: "popup",
       date: { month: "APR", day: "12", full: "2026-04-12" },
       time: "11:00 - 18:00",
-      location: "Senado Square",
+      location: "議事亭前地",
       status: "new",
       color: "bg-orange-100 text-orange-700 border-orange-200",
       categoryLabelKey: "tab_popup"
@@ -79,10 +79,43 @@ const Events: React.FC = () => {
     ? mockEvents 
     : mockEvents.filter(e => e.category === activeTab);
 
+  const handleAddToCalendar = () => {
+    // Basic ICS generation for all events
+    let icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Macau Consular//Events//ZH\n";
+    
+    mockEvents.forEach(event => {
+      // Parse date and time roughly for demo
+      const dateParts = event.date.full.split('-');
+      const timeParts = event.time.split(' - ')[0].split(':');
+      
+      const start = `${dateParts[0]}${dateParts[1]}${dateParts[2]}T${timeParts[0]}${timeParts[1]}00`;
+      // Assuming 1 hour duration if not parsed fully, but here we just take start
+      const end = `${dateParts[0]}${dateParts[1]}${dateParts[2]}T${parseInt(timeParts[0]) + 1}${timeParts[1]}00`;
+
+      icsContent += "BEGIN:VEVENT\n";
+      icsContent += `SUMMARY:${event.title}\n`;
+      icsContent += `DTSTART:${start}\n`;
+      icsContent += `DTEND:${end}\n`;
+      icsContent += `LOCATION:${event.location}\n`;
+      icsContent += `DESCRIPTION:${t('app.title')} - ${event.title}\n`;
+      icsContent += "END:VEVENT\n";
+    });
+
+    icsContent += "END:VCALENDAR";
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.setAttribute('download', 'consular_events.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 pb-24 font-sans">
       
-      {/* Immersive Hero Section - Updated Title & Removed Countdown */}
+      {/* Immersive Hero Section */}
       <div className="relative pt-24 pb-8 px-6 overflow-hidden bg-gray-900 text-white rounded-b-[3rem] shadow-2xl">
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-blue rounded-full filter blur-[80px] opacity-30 -mr-20 -mt-20"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-red rounded-full filter blur-[80px] opacity-30 -ml-20 -mb-20"></div>
@@ -125,15 +158,8 @@ const Events: React.FC = () => {
           >
             <div className="p-5">
               
-              {/* Header: Category & Status */}
-              <div className="flex justify-between items-center mb-3">
-                 <div className={`px-3 py-1 rounded-full text-xs font-bold border ${event.color}`}>
-                    {t(`events.${event.categoryLabelKey}`)}
-                 </div>
-                 {event.status === 'hot' && <div className="text-xs font-bold text-red-500 flex items-center gap-1">🔥 {t('events.status_hot')}</div>}
-                 {event.status === 'new' && <div className="text-xs font-bold text-blue-500 flex items-center gap-1">🆕 {t('events.status_new')}</div>}
-                 {event.status === 'full' && <div className="text-xs font-bold text-gray-400">{t('events.btn_full')}</div>}
-              </div>
+              {/* Removed tags from top-right as requested */}
+              <div className="mb-1"></div>
 
               {/* Title */}
               <h3 className="text-lg font-bold text-gray-900 leading-tight mb-4">
@@ -171,7 +197,11 @@ const Events: React.FC = () => {
       </div>
 
       {/* Floating Action Button (Calendar Sync) */}
-      <button className="fixed bottom-24 right-5 w-12 h-12 bg-white rounded-full shadow-2xl border border-gray-100 flex items-center justify-center text-xl z-20 hover:scale-110 transition-transform text-brand-blue">
+      <button 
+        onClick={handleAddToCalendar}
+        className="fixed bottom-24 right-5 w-12 h-12 bg-white rounded-full shadow-2xl border border-gray-100 flex items-center justify-center text-xl z-20 hover:scale-110 transition-transform text-brand-blue"
+        aria-label="Add to Calendar"
+      >
         📅
       </button>
 

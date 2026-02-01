@@ -15,6 +15,14 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Construct mailto link
+    const subject = encodeURIComponent(`聯絡我們 - 來自 ${formState.name}`);
+    const body = encodeURIComponent(`姓名: ${formState.name}\n電郵: ${formState.email}\n\n訊息:\n${formState.message}`);
+    const mailtoLink = `mailto:infodoprogramaem2526@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+
     setSent(true);
     setTimeout(() => {
       setSent(false);
@@ -33,9 +41,6 @@ const Contact: React.FC = () => {
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
         <div className="relative z-10 text-center">
-          <div className="inline-block bg-white/10 backdrop-blur-md rounded-full px-4 py-1 text-xs font-bold text-blue-300 mb-4 border border-white/10 shadow-lg">
-            {t('contact.hero_subtitle')}
-          </div>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight drop-shadow-xl">
             {t('contact.hero_title')}
           </h1>
@@ -126,7 +131,7 @@ const Contact: React.FC = () => {
            </div>
         </div>
 
-        {/* 4. Chat UI Feedback Form */}
+        {/* 4. Contact Us Form */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
            <div className="bg-gray-50 px-4 py-3 border-b border-gray-100 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>

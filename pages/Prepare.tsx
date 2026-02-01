@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../LanguageContext';
 
 const Prepare: React.FC = () => {
   const { t } = useLanguage();
   const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
+  const [showPopup, setShowPopup] = useState(false);
+  const [hasShownPopup, setHasShownPopup] = useState(false);
 
   const checklist = [
     { id: 1, icon: '🛂', title: t('prepare.check_1_t'), desc: t('prepare.check_1_d') },
@@ -19,6 +21,13 @@ const Prepare: React.FC = () => {
 
   const completedCount = Object.values(checkedItems).filter(Boolean).length;
   const progress = (completedCount / checklist.length) * 100;
+
+  useEffect(() => {
+    if (progress === 100 && !hasShownPopup) {
+      setShowPopup(true);
+      setHasShownPopup(true);
+    }
+  }, [progress, hasShownPopup]);
 
   return (
     <div className="pb-24 min-h-screen bg-gray-50">
@@ -37,21 +46,18 @@ const Prepare: React.FC = () => {
         
         <div className="relative z-10 px-6 pt-32 flex items-center justify-between gap-4">
           <div className="text-left flex-1">
-            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-bold mb-3 border border-white/30">
-              {t('prepare.hero_title')}
-            </div>
             <h1 className="text-2xl font-bold mb-2 leading-tight">
-               {t('prepare.hero_desc').split('。')[0]}
+               {t('prepare.hero_title')}
             </h1>
             <p className="text-sm opacity-80 max-w-sm">
-               {t('prepare.hero_desc').split('。')[1]}
+               {t('prepare.hero_desc')}
             </p>
           </div>
           <div className="text-7xl shrink-0">✈️</div>
         </div>
       </div>
 
-      {/* Floating Progress Card - Extracted to avoid clipping */}
+      {/* Floating Progress Card */}
       <div className="px-4 -mt-12 relative z-20">
          <div className="bg-white rounded-xl shadow-xl p-4 flex items-center gap-4">
             <div className="relative w-16 h-16 shrink-0">
@@ -140,7 +146,7 @@ const Prepare: React.FC = () => {
            </div>
         </div>
 
-        {/* Fraud Alert - Glitch Style Warning */}
+        {/* Fraud Alert */}
         <div className="bg-gray-900 rounded-xl p-1 relative overflow-hidden group">
            {/* Animated border gradient */}
            <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 opacity-50 group-hover:opacity-100 transition-opacity"></div>
@@ -169,8 +175,29 @@ const Prepare: React.FC = () => {
              點擊下載”中國領事”APP
            </a>
         </div>
-
       </div>
+
+      {/* Completion Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+          <div className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl transform transition-all scale-100">
+            <div className="text-center">
+              <div className="text-6xl mb-4 animate-bounce">🎉</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('prepare.popup_congrats')}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {t('prepare.popup_message')}
+              </p>
+              <button 
+                onClick={() => setShowPopup(false)}
+                className="w-full bg-brand-blue text-white py-3 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition-colors"
+              >
+                {t('prepare.popup_close')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
