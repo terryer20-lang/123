@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { MENU_ITEMS } from '../constants';
 import { useLanguage } from '../LanguageContext';
@@ -10,15 +10,43 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [sosOffset, setSosOffset] = useState(0);
+  const footerRef = useRef<HTMLElement>(null);
   const location = useLocation();
   const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
+      // Handle header background
       setScrolled(window.scrollY > 20);
+
+      // Handle SOS button offset to avoid footer overlap
+      if (footerRef.current) {
+        const footerRect = footerRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate how much of the footer is visible in the viewport
+        // If footer top is less than window height, it's entering the view
+        if (footerRect.top < windowHeight) {
+          const overlap = windowHeight - footerRect.top;
+          // Add a small buffer (e.g., 10px) if desired, or just use overlap to maintain original margin relative to footer top
+          setSosOffset(Math.max(0, overlap));
+        } else {
+          setSosOffset(0);
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Recalculate on resize
+    
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -33,11 +61,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         `}
       >
         {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-2 md:gap-3 group z-50 relative">
-          <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-white flex items-center justify-center bg-white/10 backdrop-blur-sm group-hover:bg-white/20 transition-colors shrink-0">
-             <span className="font-serif font-bold text-white text-base md:text-lg">EQ</span>
+        <Link to="/" className="flex items-center gap-3 group z-50 relative">
+          <div className="w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/80 bg-white/90 shadow-md flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform">
+             <img src="/images/Escudos de Quíron.png" alt="Logo" className="w-full h-full object-cover" />
           </div>
-          <span className={`font-bold text-white text-base md:text-lg tracking-wide whitespace-nowrap ${isHome && !scrolled ? 'text-shadow-sm' : ''}`}>
+          <span className={`font-bold text-white text-lg md:text-xl tracking-wide whitespace-nowrap drop-shadow-sm ${isHome && !scrolled ? 'text-shadow-md' : ''}`}>
             {t('app.title')}
           </span>
         </Link>
@@ -62,6 +90,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="flex-1 w-full max-w-[100vw]">
         {children}
       </main>
+
+      {/* Global Copyright Footer - Now at the very bottom */}
+      <footer ref={footerRef} className="w-full bg-gray-900 text-white/50 text-[10px] py-6 px-6 text-center z-10 relative">
+         <div className="max-w-4xl mx-auto leading-relaxed">
+            {t('app.copyright')}
+         </div>
+      </footer>
 
       {/* Sidebar Overlay Menu - Responsive Width */}
       <div 
@@ -92,15 +127,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             ))}
           </div>
           <div className="p-4 md:p-6 bg-gray-50 text-center text-xs text-gray-400 pb-safe-bottom">
-            {t('app.copyright')}
+            {/* Copyright is now in the global footer */}
           </div>
         </div>
       </div>
 
-      {/* Floating SOS Button - Safe Area Aware */}
+      {/* Floating SOS Button - Dynamic Positioning */}
       <Link 
         to="/emergency"
-        className="fixed bottom-6 right-5 md:bottom-8 md:right-6 bg-brand-red text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-xl shadow-red-900/30 flex flex-col items-center justify-center z-40 hover:scale-105 transition-transform border-4 border-white/90 animate-pulse mb-[env(safe-area-inset-bottom)]"
+        style={{ 
+          bottom: `calc(1.5rem + env(safe-area-inset-bottom) + ${sosOffset}px)` 
+        }}
+        className="fixed right-5 md:right-6 bg-brand-red text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-xl shadow-red-900/30 flex flex-col items-center justify-center z-40 hover:scale-105 transition-all duration-100 ease-out border-4 border-white/90 animate-pulse"
         aria-label="Emergency SOS"
       >
         <span className="text-xl md:text-2xl">🆘</span>

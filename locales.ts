@@ -8,8 +8,8 @@ export const LANGUAGE_LABELS: Record<LanguageCode, string> = {
 export const translations = {
   "zh-MO": {
     app: {
-      title: "領事保護",
-      copyright: "© 2024 澳門領事保護",
+      title: "智保同行",
+      copyright: "© 2025-2026 中葡職業技術學校高三翻譯宣傳領事保護與協助和居民權利小組（Escudos de Quíron） 版權所有",
       placeholder: "內容建設中...",
       construction: "🚧",
       back: "返回"
@@ -17,7 +17,7 @@ export const translations = {
     menu: {
       title: "功能菜單",
       "star-challenge": "領保之星挑戰賽",
-      "safety-test": "海外旅行安全指數",
+      "safety-test": "海外旅行安全指數小測試",
       "going-abroad": "我即將出國",
       "overseas-help": "我在海外遇到困難",
       "emergency": "緊急求助專區",
