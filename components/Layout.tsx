@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { MENU_ITEMS } from '../constants';
@@ -63,7 +64,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 group z-50 relative">
           <div className="w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/80 bg-white/90 shadow-md flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform">
-             <img src="/images/Escudos de Quíron.png" alt="Logo" className="w-full h-full object-cover" />
+             <img src="/images/Escudos de Quíron.jpg" alt="Logo" className="w-full h-full object-cover" />
           </div>
           <span className={`font-bold text-white text-lg md:text-xl tracking-wide whitespace-nowrap drop-shadow-sm ${isHome && !scrolled ? 'text-shadow-md' : ''}`}>
             {t('app.title')}
