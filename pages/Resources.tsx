@@ -15,10 +15,10 @@ const Resources: React.FC = () => {
   ];
 
   return (
-    <div className="pb-24 min-h-screen bg-gray-50 font-sans">
+    <div className="pb-24 min-h-screen bg-gray-50 font-sans pt-16">
       
       {/* Hero: Digital Backpack Theme */}
-      <div className="relative pt-32 pb-12 px-6 bg-gray-900 overflow-hidden rounded-b-[3rem] shadow-2xl">
+      <div className="relative py-10 px-6 bg-gray-900 overflow-hidden rounded-b-[3rem] shadow-2xl">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/4.jpg" 

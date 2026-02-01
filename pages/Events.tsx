@@ -113,10 +113,10 @@ const Events: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 font-sans">
+    <div className="min-h-screen bg-gray-50 pb-24 font-sans pt-16">
       
       {/* Immersive Hero Section */}
-      <div className="relative pt-24 pb-8 px-6 overflow-hidden bg-gray-900 text-white rounded-b-[3rem] shadow-2xl">
+      <div className="relative py-10 px-6 overflow-hidden bg-gray-900 text-white rounded-b-[3rem] shadow-2xl">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/3.jpg" 
@@ -137,7 +137,7 @@ const Events: React.FC = () => {
       </div>
 
       {/* Floating Category Filter */}
-      <div className="sticky top-[60px] z-30 py-4 overflow-x-auto no-scrollbar pl-4 bg-gray-50/95 backdrop-blur-sm mask-gradient-r">
+      <div className="sticky top-[64px] z-30 py-4 overflow-x-auto no-scrollbar pl-4 bg-gray-50/95 backdrop-blur-sm mask-gradient-r">
         <div className="flex gap-3 pr-4">
           {['all', 'seminar', 'online', 'popup'].map((tab) => (
             <button
