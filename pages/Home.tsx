@@ -13,11 +13,11 @@ const Home: React.FC = () => {
   };
 
   const KNOWLEDGE_IMAGES = [
-    "領保服務要收費嗎？親，國家不收費，但這些錢你要自己付！_主頁_按鈕背景圖.png",
-    "領保人員隨時待命？真的「說走就走」嗎？_主頁_按鈕背景圖.png",
-    "什麼是中國領事保護？國家給你的「海外護身符」！_主頁_按鈕背景圖.png",
-    "誰在保護我們？全球 260+使領館，有中國人的地方就有依靠！_主頁_按鈕背景圖.png",
-    "領保到底保什麼？人身、財產、人道待遇，一樣都不少！_主頁_按鈕背景圖.png"
+    "領保服務要收費嗎？親，國家不收費，但這些錢你要自己付！_主頁_按鈕背景圖.jpg",
+    "領保人員隨時待命？真的「說走就走」嗎？_主頁_按鈕背景圖.jpg",
+    "什麼是中國領事保護？國家給你的「海外護身符」！_主頁_按鈕背景圖.jpg",
+    "誰在保護我們？全球 260+使領館，有中國人的地方就有依靠！_主頁_按鈕背景圖.jpg",
+    "領保到底保什麼？人身、財產、人道待遇，一樣都不少！_主頁_按鈕背景圖.jpg"
   ];
 
   return (
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/領事保護專區_主頁_按鈕背景圖.png" 
+              src="/images/領事保護專區_主頁_按鈕背景圖.jpg" 
               alt="Consular Protection" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
              <img 
-              src="/images/居民身份權利專區_主頁_按鈕背景圖.png" 
+              src="/images/居民身份權利專區_主頁_按鈕背景圖.jpg" 
               alt="Resident Rights" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
              <img 
-              src="/images/活動日程專區_主頁_按鈕背景圖.png" 
+              src="/images/活動日程專區_主頁_按鈕背景圖.jpg" 
               alt="Events" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
              <img 
-              src="/images/資源專區_主頁_按鈕背景圖.png" 
+              src="/images/資源專區_主頁_按鈕背景圖.jpg" 
               alt="Resources" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
